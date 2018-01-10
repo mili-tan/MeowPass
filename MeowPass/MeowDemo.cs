@@ -22,19 +22,19 @@ namespace MeowPass
             string uPassCrypto = "";
             if (shaRButton.Checked)
             {
-                uPassCrypto = meowTool.MySHACrypto(uPassBox.Text.ToString());
+                uPassCrypto = MeowTool.MySHACrypto(uPassBox.Text.ToString());
             }
             else if(md5RButton.Checked)
             {
-                uPassCrypto = meowTool.MyMD5Crypto(uPassBox.Text.ToString());
+                uPassCrypto = MeowTool.MyMD5Crypto(uPassBox.Text.ToString());
             }
             switch (encryptBox.SelectedIndex)
             {
                 case 0:
-                    passBox.Text = meowTool.MyDESCrypto(tagBox.Text, uPassCrypto);
+                    passBox.Text = MeowTool.MyDESCrypto(tagBox.Text, uPassCrypto);
                     break;
                 case 1:
-                    passBox.Text = meowTool.MyTripleDESCrypto(tagBox.Text, uPassCrypto);
+                    passBox.Text = MeowTool.MyTripleDESCrypto(tagBox.Text, uPassCrypto);
                     break;
                 default:
                     break;

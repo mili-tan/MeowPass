@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MeowPass
 {
-    class meowTool
+    class MeowTool
     {
         private static byte[] Iv = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
         public static string MyMD5Crypto(string str)
