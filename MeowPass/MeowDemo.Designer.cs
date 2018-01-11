@@ -143,7 +143,8 @@
             this.encryptBox.Items.AddRange(new object[] {
             "DES",
             "TripleDES",
-            "AES"});
+            "AES",
+            "RC2"});
             this.encryptBox.Location = new System.Drawing.Point(84, 73);
             this.encryptBox.Name = "encryptBox";
             this.encryptBox.Size = new System.Drawing.Size(278, 23);

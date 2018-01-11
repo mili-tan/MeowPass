@@ -36,11 +36,8 @@ namespace MeowPass
             DESCryptoServiceProvider desC = new DESCryptoServiceProvider();
             MemoryStream mStream = new MemoryStream();
 
-            ICryptoTransform transForm = desC.CreateEncryptor(keys, Iv);
-            CryptoStream cStream = new CryptoStream(mStream, transForm, CryptoStreamMode.Write);
-            cStream.Write(strs, 0, strs.Length);
-            cStream.FlushFinalBlock();
-            return Convert.ToBase64String(mStream.ToArray());
+            ICryptoTransform cryp = desC.CreateEncryptor(keys, Iv);
+            return Convert.ToBase64String(cryp.TransformFinalBlock(strs, 0, strs.Length));
         }
         public static string MyTripleDESCrypto(string str, string key)
         {
@@ -75,14 +72,14 @@ namespace MeowPass
             }
             string encryptKey = encryptKeyall.Substring(0, 32);
 
-            SymmetricAlgorithm desC = Rijndael.Create();
+            SymmetricAlgorithm aesC = Rijndael.Create();
             byte[] strs = Encoding.UTF8.GetBytes(str);
-            desC.Key = Encoding.UTF8.GetBytes(encryptKey);
-            desC.IV = Iv16;
+            aesC.Key = Encoding.UTF8.GetBytes(encryptKey);
+            aesC.IV = Iv16;
             byte[] cipherBytes = null;
             using (MemoryStream mStream = new MemoryStream())
             {
-                using (CryptoStream cStream = new CryptoStream(mStream, desC.CreateEncryptor(), CryptoStreamMode.Write))
+                using (CryptoStream cStream = new CryptoStream(mStream, aesC.CreateEncryptor(), CryptoStreamMode.Write))
                 {
                     cStream.Write(strs, 0, strs.Length);
                     cStream.FlushFinalBlock();
@@ -92,6 +89,27 @@ namespace MeowPass
                 }
             }
             return Convert.ToBase64String(cipherBytes);
+        }
+        public static string MyRC2Crypto(string str, string key)
+        {
+            string encryptKeyall = Convert.ToString(key);
+            if (encryptKeyall.Length < 9)
+            {
+                while (!(encryptKeyall.Length < 9))
+                {
+                    encryptKeyall += encryptKeyall;
+                }
+            }
+            string encryptKey = encryptKeyall.Substring(0, 8);
+            byte[] strs = Encoding.Unicode.GetBytes(str);
+            byte[] keys = Encoding.UTF8.GetBytes(encryptKey); ;
+
+            RC2CryptoServiceProvider rc2C = new RC2CryptoServiceProvider();
+            rc2C.Key = keys;
+            rc2C.IV = Iv;
+            ICryptoTransform cryp = rc2C.CreateEncryptor();
+
+            return Convert.ToBase64String(cryp.TransformFinalBlock(strs, 0, strs.Length));
         }
     }
 }
