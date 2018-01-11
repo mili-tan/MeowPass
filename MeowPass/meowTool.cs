@@ -8,6 +8,7 @@ namespace MeowPass
     class MeowTool
     {
         private static byte[] Iv = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
+        private static byte[] Iv16 = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF, 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
         public static string MyMD5Crypto(string str)
         {
             byte[] md5Byte = new MD5CryptoServiceProvider().ComputeHash(Encoding.Default.GetBytes(str.Trim()));
@@ -61,6 +62,36 @@ namespace MeowPass
             ICryptoTransform cryp = tdesC.CreateEncryptor();
 
             return Convert.ToBase64String(cryp.TransformFinalBlock(strs, 0, strs.Length));
+        }
+        public static string MyAESCrypto(string str, string key)
+        {
+            string encryptKeyall = Convert.ToString(key);
+            if (encryptKeyall.Length < 33)
+            {
+                while (!(encryptKeyall.Length < 33))
+                {
+                    encryptKeyall += encryptKeyall;
+                }
+            }
+            string encryptKey = encryptKeyall.Substring(0, 32);
+
+            SymmetricAlgorithm desC = Rijndael.Create();
+            byte[] strs = Encoding.UTF8.GetBytes(str);
+            desC.Key = Encoding.UTF8.GetBytes(encryptKey);
+            desC.IV = Iv16;
+            byte[] cipherBytes = null;
+            using (MemoryStream mStream = new MemoryStream())
+            {
+                using (CryptoStream cStream = new CryptoStream(mStream, desC.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cStream.Write(strs, 0, strs.Length);
+                    cStream.FlushFinalBlock();
+                    cipherBytes = mStream.ToArray();
+                    cStream.Close();
+                    mStream.Close();
+                }
+            }
+            return Convert.ToBase64String(cipherBytes);
         }
     }
 }

@@ -36,6 +36,9 @@ namespace MeowPass
                 case 1:
                     passBox.Text = MeowTool.MyTripleDESCrypto(tagBox.Text, uPassCrypto);
                     break;
+                case 2:
+                    passBox.Text = MeowTool.MyAESCrypto(tagBox.Text, uPassCrypto);
+                    break;
                 default:
                     break;
             }
