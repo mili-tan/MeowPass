@@ -41,6 +41,7 @@
             this.shaRButton = new System.Windows.Forms.RadioButton();
             this.md5RButton = new System.Windows.Forms.RadioButton();
             this.meowButton = new System.Windows.Forms.Button();
+            this.crcRButton = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -153,15 +154,17 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.shaRButton, 1, 0);
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.md5RButton, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.shaRButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.crcRButton, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(84, 105);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(278, 28);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
@@ -169,9 +172,9 @@
             // 
             this.shaRButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.shaRButton.AutoSize = true;
-            this.shaRButton.Location = new System.Drawing.Point(142, 4);
+            this.shaRButton.Location = new System.Drawing.Point(95, 4);
             this.shaRButton.Name = "shaRButton";
-            this.shaRButton.Size = new System.Drawing.Size(133, 19);
+            this.shaRButton.Size = new System.Drawing.Size(86, 19);
             this.shaRButton.TabIndex = 1;
             this.shaRButton.Text = "SHA";
             this.shaRButton.UseVisualStyleBackColor = true;
@@ -183,7 +186,7 @@
             this.md5RButton.Checked = true;
             this.md5RButton.Location = new System.Drawing.Point(3, 4);
             this.md5RButton.Name = "md5RButton";
-            this.md5RButton.Size = new System.Drawing.Size(133, 19);
+            this.md5RButton.Size = new System.Drawing.Size(86, 19);
             this.md5RButton.TabIndex = 0;
             this.md5RButton.TabStop = true;
             this.md5RButton.Text = "MD5";
@@ -199,6 +202,17 @@
             this.meowButton.Text = "喵！";
             this.meowButton.UseVisualStyleBackColor = true;
             this.meowButton.Click += new System.EventHandler(this.meowButton_Click);
+            // 
+            // crcRButton
+            // 
+            this.crcRButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.crcRButton.AutoSize = true;
+            this.crcRButton.Location = new System.Drawing.Point(187, 4);
+            this.crcRButton.Name = "crcRButton";
+            this.crcRButton.Size = new System.Drawing.Size(88, 19);
+            this.crcRButton.TabIndex = 2;
+            this.crcRButton.Text = "CRC";
+            this.crcRButton.UseVisualStyleBackColor = true;
             // 
             // MeowDemo
             // 
@@ -233,6 +247,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.RadioButton md5RButton;
         private System.Windows.Forms.RadioButton shaRButton;
+        private System.Windows.Forms.RadioButton crcRButton;
     }
 }
 

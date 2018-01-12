@@ -20,6 +20,11 @@ namespace MeowPass
             byte[] shaByte = new SHA1CryptoServiceProvider().ComputeHash(Encoding.Default.GetBytes(str.Trim()));
             return BitConverter.ToString(shaByte).Replace("-", "");
         }
+        public static string MyCRSCrypto(string str)
+        {
+            byte[] shaByte = CRC.CRC16(Encoding.Default.GetBytes(str.Trim()));
+            return BitConverter.ToString(shaByte).Replace("-", "");
+        }
         public static string MyDESCrypto(string str, string key)
         {
             string encryptKeyall = Convert.ToString(key);

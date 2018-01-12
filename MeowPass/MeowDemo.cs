@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MeowPass
@@ -27,6 +20,10 @@ namespace MeowPass
             else if(md5RButton.Checked)
             {
                 uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyMD5Crypto(uPassBox.Text.ToString())+ uPassBox.Text.ToString());
+            }
+            else if (crcRButton.Checked)
+            {
+                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
             switch (encryptBox.SelectedIndex)
             {

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlowFish.cs" />
+    <Compile Include="CRC.cs" />
     <Compile Include="MeowDemo.cs">
       <SubType>Form</SubType>
     </Compile>
