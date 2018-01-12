@@ -22,11 +22,11 @@ namespace MeowPass
             string uPassCrypto = "";
             if (shaRButton.Checked)
             {
-                uPassCrypto = MeowTool.MySHACrypto(uPassBox.Text.ToString());
+                uPassCrypto = MeowTool.MySHACrypto(MeowTool.MySHACrypto(uPassBox.Text.ToString())+ uPassBox.Text.ToString());
             }
             else if(md5RButton.Checked)
             {
-                uPassCrypto = MeowTool.MyMD5Crypto(uPassBox.Text.ToString());
+                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyMD5Crypto(uPassBox.Text.ToString())+ uPassBox.Text.ToString());
             }
             switch (encryptBox.SelectedIndex)
             {
