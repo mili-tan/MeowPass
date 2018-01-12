@@ -42,6 +42,9 @@ namespace MeowPass
                 case 3:
                     passBox.Text = MeowTool.MyRC2Crypto(tagBox.Text, uPassCrypto);
                     break;
+                case 4:
+                    passBox.Text = MeowTool.MyBlowFishCrypto(tagBox.Text, uPassCrypto);
+                    break;
                 default:
                     break;
             }

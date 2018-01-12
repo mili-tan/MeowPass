@@ -2,6 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using TaylorHornby.BlowFish;
 
 namespace MeowPass
 {
@@ -110,6 +111,11 @@ namespace MeowPass
             ICryptoTransform cryp = rc2C.CreateEncryptor();
 
             return Convert.ToBase64String(cryp.TransformFinalBlock(strs, 0, strs.Length));
+        }
+        public static string MyBlowFishCrypto(string str, string key)
+        {
+            BlowFish bFist = new BlowFish(key);
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(bFist.Encrypt_ECB(str)));
         }
     }
 }

@@ -144,7 +144,8 @@
             "DES",
             "TripleDES",
             "AES",
-            "RC2"});
+            "RC2",
+            "BlowFish"});
             this.encryptBox.Location = new System.Drawing.Point(84, 73);
             this.encryptBox.Name = "encryptBox";
             this.encryptBox.Size = new System.Drawing.Size(278, 23);
