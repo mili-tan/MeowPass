@@ -38,12 +38,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.encryptBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.shaRButton = new System.Windows.Forms.RadioButton();
             this.md5RButton = new System.Windows.Forms.RadioButton();
-            this.meowButton = new System.Windows.Forms.Button();
+            this.shaRButton = new System.Windows.Forms.RadioButton();
             this.crcRButton = new System.Windows.Forms.RadioButton();
+            this.meowButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxHidePass = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -51,9 +54,9 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.tagBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.passBox, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.uPassBox, 1, 1);
@@ -92,9 +95,9 @@
             // passBox
             // 
             this.passBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passBox.Location = new System.Drawing.Point(84, 142);
+            this.passBox.Location = new System.Drawing.Point(3, 3);
             this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(278, 25);
+            this.passBox.Size = new System.Drawing.Size(178, 25);
             this.passBox.TabIndex = 2;
             // 
             // label3
@@ -168,17 +171,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(278, 28);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // shaRButton
-            // 
-            this.shaRButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.shaRButton.AutoSize = true;
-            this.shaRButton.Location = new System.Drawing.Point(95, 4);
-            this.shaRButton.Name = "shaRButton";
-            this.shaRButton.Size = new System.Drawing.Size(86, 19);
-            this.shaRButton.TabIndex = 1;
-            this.shaRButton.Text = "SHA";
-            this.shaRButton.UseVisualStyleBackColor = true;
-            // 
             // md5RButton
             // 
             this.md5RButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -192,16 +184,16 @@
             this.md5RButton.Text = "MD5";
             this.md5RButton.UseVisualStyleBackColor = true;
             // 
-            // meowButton
+            // shaRButton
             // 
-            this.meowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.meowButton.Location = new System.Drawing.Point(13, 192);
-            this.meowButton.Name = "meowButton";
-            this.meowButton.Size = new System.Drawing.Size(365, 23);
-            this.meowButton.TabIndex = 1;
-            this.meowButton.Text = "喵！";
-            this.meowButton.UseVisualStyleBackColor = true;
-            this.meowButton.Click += new System.EventHandler(this.meowButton_Click);
+            this.shaRButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.shaRButton.AutoSize = true;
+            this.shaRButton.Location = new System.Drawing.Point(95, 4);
+            this.shaRButton.Name = "shaRButton";
+            this.shaRButton.Size = new System.Drawing.Size(86, 19);
+            this.shaRButton.TabIndex = 1;
+            this.shaRButton.Text = "SHA";
+            this.shaRButton.UseVisualStyleBackColor = true;
             // 
             // crcRButton
             // 
@@ -213,6 +205,46 @@
             this.crcRButton.TabIndex = 2;
             this.crcRButton.Text = "CRC";
             this.crcRButton.UseVisualStyleBackColor = true;
+            // 
+            // meowButton
+            // 
+            this.meowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.meowButton.Location = new System.Drawing.Point(13, 192);
+            this.meowButton.Name = "meowButton";
+            this.meowButton.Size = new System.Drawing.Size(365, 23);
+            this.meowButton.TabIndex = 1;
+            this.meowButton.Text = "喵！";
+            this.meowButton.UseVisualStyleBackColor = true;
+            this.meowButton.Click += new System.EventHandler(this.meowButton_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.54676F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.45324F));
+            this.tableLayoutPanel3.Controls.Add(this.passBox, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.checkBoxHidePass, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(84, 139);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(278, 31);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // checkBoxHidePass
+            // 
+            this.checkBoxHidePass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxHidePass.AutoSize = true;
+            this.checkBoxHidePass.Checked = true;
+            this.checkBoxHidePass.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxHidePass.Font = new System.Drawing.Font("宋体", 7F);
+            this.checkBoxHidePass.Location = new System.Drawing.Point(187, 7);
+            this.checkBoxHidePass.Name = "checkBoxHidePass";
+            this.checkBoxHidePass.Size = new System.Drawing.Size(88, 17);
+            this.checkBoxHidePass.TabIndex = 3;
+            this.checkBoxHidePass.Text = "隐藏密码";
+            this.checkBoxHidePass.UseVisualStyleBackColor = true;
+            this.checkBoxHidePass.CheckedChanged += new System.EventHandler(this.checkBoxHidePass_CheckedChanged);
             // 
             // MeowDemo
             // 
@@ -228,6 +260,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -248,6 +282,8 @@
         private System.Windows.Forms.RadioButton md5RButton;
         private System.Windows.Forms.RadioButton shaRButton;
         private System.Windows.Forms.RadioButton crcRButton;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.CheckBox checkBoxHidePass;
     }
 }
 

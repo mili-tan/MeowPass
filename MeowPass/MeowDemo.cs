@@ -50,6 +50,22 @@ namespace MeowPass
         private void Form1_Load(object sender, EventArgs e)
         {
             encryptBox.SelectedIndex = 0;
+            if (checkBoxHidePass.Checked)
+            {
+                passBox.PasswordChar =  '*' ;
+            }
+        }
+
+        private void checkBoxHidePass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHidePass.Checked)
+            {
+                passBox.PasswordChar = '*';
+            }
+            else
+            {
+                passBox.PasswordChar = new char();
+            }
         }
     }
 }
