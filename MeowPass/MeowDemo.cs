@@ -1,10 +1,17 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using WindowsInput;
 
 namespace MeowPass
 {
     public partial class MeowDemo : Form
     {
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, Keys vk);
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
         public MeowDemo()
         {
             InitializeComponent();
@@ -49,8 +56,9 @@ namespace MeowPass
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             encryptBox.SelectedIndex = 0;
+            RegisterHotKey(Handle, 233, 3, Keys.Enter);
+
             if (checkBoxHidePass.Checked)
             {
                 passBox.PasswordChar =  '*' ;
@@ -72,6 +80,28 @@ namespace MeowPass
         private void button1_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(passBox.Text);
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x0312:
+                    if (m.WParam.ToString() == "233")
+                    {
+                        if (!string.IsNullOrEmpty(passBox.Text))
+                        {
+                            new InputSimulator().Keyboard.TextEntry(passBox.Text);
+                        }
+                    }
+                    break;
+            }
+            base.WndProc(ref m);
+        }
+
+        private void MeowDemo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UnregisterHotKey(Handle, 233);
         }
     }
 }

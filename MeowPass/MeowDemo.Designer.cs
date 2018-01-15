@@ -261,15 +261,17 @@
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label5.Location = new System.Drawing.Point(0, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(390, 35);
             this.label5.TabIndex = 3;
-            this.label5.Text = "[按下Ctrl+Alt+Enter模拟键入]";
+            this.label5.Text = "[或按下Ctrl+Alt+Enter模拟键入]";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MeowDemo
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 274);
@@ -279,6 +281,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MeowDemo";
             this.Text = "MeowDemo";
+            this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MeowDemo_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
