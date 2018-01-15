@@ -44,6 +44,8 @@
             this.meowButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxHidePass = new System.Windows.Forms.CheckBox();
+            this.buttonCopyToClipboard = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -246,11 +248,33 @@
             this.checkBoxHidePass.UseVisualStyleBackColor = true;
             this.checkBoxHidePass.CheckedChanged += new System.EventHandler(this.checkBoxHidePass_CheckedChanged);
             // 
+            // buttonCopyToClipboard
+            // 
+            this.buttonCopyToClipboard.Location = new System.Drawing.Point(13, 221);
+            this.buttonCopyToClipboard.Name = "buttonCopyToClipboard";
+            this.buttonCopyToClipboard.Size = new System.Drawing.Size(365, 23);
+            this.buttonCopyToClipboard.TabIndex = 2;
+            this.buttonCopyToClipboard.Text = "复制到剪贴板";
+            this.buttonCopyToClipboard.UseVisualStyleBackColor = true;
+            this.buttonCopyToClipboard.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label5.Location = new System.Drawing.Point(0, 239);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(390, 35);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "[按下Ctrl+Alt+Enter模拟键入]";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MeowDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 274);
+            this.Controls.Add(this.buttonCopyToClipboard);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.meowButton);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MeowDemo";
@@ -284,6 +308,8 @@
         private System.Windows.Forms.RadioButton crcRButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.CheckBox checkBoxHidePass;
+        private System.Windows.Forms.Button buttonCopyToClipboard;
+        private System.Windows.Forms.Label label5;
     }
 }
 
