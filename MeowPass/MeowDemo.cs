@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WindowsInput;
+using System.Drawing;
 
 namespace MeowPass
 {
@@ -56,6 +57,9 @@ namespace MeowPass
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             encryptBox.SelectedIndex = 0;
             RegisterHotKey(Handle, 233, 3, Keys.Enter);
 
