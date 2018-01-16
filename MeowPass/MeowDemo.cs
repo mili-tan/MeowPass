@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WindowsInput;
 using System.Drawing;
+using System.Threading;
 
 namespace MeowPass
 {
@@ -24,11 +25,11 @@ namespace MeowPass
             string uTagCrypto = MeowTool.MyMD5Crypto(tagBox.Text);
             if (shaRButton.Checked)
             {
-                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MySHACrypto(uPassBox.Text.ToString())+ uPassBox.Text.ToString());
+                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
-            else if(md5RButton.Checked)
+            else if (md5RButton.Checked)
             {
-                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyMD5Crypto(uPassBox.Text.ToString())+ uPassBox.Text.ToString());
+                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyMD5Crypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
             else if (crcRButton.Checked)
             {
@@ -58,15 +59,17 @@ namespace MeowPass
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ShowInTaskbar = false;
             MaximizeBox = false;
-            MinimizeBox = false;
+            //MinimizeBox = false;
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            notifyIcon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             encryptBox.SelectedIndex = 0;
             RegisterHotKey(Handle, 233, 3, Keys.Enter);
 
             if (checkBoxHidePass.Checked)
             {
-                passBox.PasswordChar =  '*' ;
+                passBox.PasswordChar = '*';
             }
         }
 
@@ -107,6 +110,51 @@ namespace MeowPass
         private void MeowDemo_FormClosing(object sender, FormClosingEventArgs e)
         {
             UnregisterHotKey(Handle, 233);
+        }
+
+        private void notifyIcon_DoubleClick(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                Visible = true;
+                WindowState = FormWindowState.Normal;
+                Activate();
+                ShowInTaskbar = false;
+            }
+        }
+
+        private void MeowDemo_SizeChanged(object sender, EventArgs e)
+        {
+            Thread.Sleep(200);
+            if (WindowState == FormWindowState.Minimized)
+            {
+                Visible = false;
+                ShowInTaskbar = false;
+            }
+        }
+
+        private void menuItemExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void menuItemShow_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                Visible = true;
+                WindowState = FormWindowState.Normal;
+                Activate();
+                ShowInTaskbar = false;
+            }
+            else
+            {
+                WindowState = FormWindowState.Minimized;
+                Thread.Sleep(200);
+                Visible = false;
+                ShowInTaskbar = false;
+
+            }
         }
     }
 }
