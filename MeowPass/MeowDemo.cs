@@ -21,9 +21,10 @@ namespace MeowPass
         private void meowButton_Click(object sender, EventArgs e)
         {
             string uPassCrypto = "";
+            string uTagCrypto = MeowTool.MyMD5Crypto(tagBox.Text);
             if (shaRButton.Checked)
             {
-                uPassCrypto = MeowTool.MySHACrypto(MeowTool.MySHACrypto(uPassBox.Text.ToString())+ uPassBox.Text.ToString());
+                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MySHACrypto(uPassBox.Text.ToString())+ uPassBox.Text.ToString());
             }
             else if(md5RButton.Checked)
             {
@@ -36,19 +37,19 @@ namespace MeowPass
             switch (encryptBox.SelectedIndex)
             {
                 case 0:
-                    passBox.Text = MeowTool.MyDESCrypto(tagBox.Text, uPassCrypto);
+                    passBox.Text = MeowTool.MyDESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 1:
-                    passBox.Text = MeowTool.MyTripleDESCrypto(tagBox.Text, uPassCrypto);
+                    passBox.Text = MeowTool.MyTripleDESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 2:
-                    passBox.Text = MeowTool.MyAESCrypto(tagBox.Text, uPassCrypto);
+                    passBox.Text = MeowTool.MyAESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 3:
-                    passBox.Text = MeowTool.MyRC2Crypto(tagBox.Text, uPassCrypto);
+                    passBox.Text = MeowTool.MyRC2Crypto(uTagCrypto, uPassCrypto);
                     break;
                 case 4:
-                    passBox.Text = MeowTool.MyBlowFishCrypto(tagBox.Text, uPassCrypto);
+                    passBox.Text = MeowTool.MyBlowFishCrypto(uTagCrypto, uPassCrypto);
                     break;
                 default:
                     break;
