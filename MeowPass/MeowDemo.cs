@@ -116,20 +116,15 @@ namespace MeowPass
         {
             if (WindowState == FormWindowState.Minimized)
             {
-                Visible = true;
-                WindowState = FormWindowState.Normal;
-                Activate();
-                ShowInTaskbar = false;
+                NormalForm();
             }
         }
 
         private void MeowDemo_SizeChanged(object sender, EventArgs e)
         {
-            Thread.Sleep(200);
             if (WindowState == FormWindowState.Minimized)
             {
-                Visible = false;
-                ShowInTaskbar = false;
+                MinimizedForm();
             }
         }
 
@@ -142,19 +137,30 @@ namespace MeowPass
         {
             if (WindowState == FormWindowState.Minimized)
             {
-                Visible = true;
-                WindowState = FormWindowState.Normal;
-                Activate();
-                ShowInTaskbar = false;
+                NormalForm();
+                menuItemShow.Text = "最小化";
             }
             else
             {
-                WindowState = FormWindowState.Minimized;
-                Thread.Sleep(200);
-                Visible = false;
-                ShowInTaskbar = false;
-
+                MinimizedForm();
+                menuItemShow.Text = "显示";
             }
+        }
+
+        public void MinimizedForm()
+        {
+            WindowState = FormWindowState.Minimized;
+            Thread.Sleep(200);
+            Visible = false;
+            ShowInTaskbar = false;
+        }
+
+        public void NormalForm()
+        {
+            Visible = true;
+            WindowState = FormWindowState.Normal;
+            Activate();
+            ShowInTaskbar = false;
         }
     }
 }

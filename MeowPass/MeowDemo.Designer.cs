@@ -293,24 +293,24 @@
             this.menuItemExit});
             this.contextMenu.Name = "contextMenu";
             this.contextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.contextMenu.Size = new System.Drawing.Size(176, 86);
+            this.contextMenu.Size = new System.Drawing.Size(124, 58);
             // 
             // menuItemShow
             // 
             this.menuItemShow.Name = "menuItemShow";
-            this.menuItemShow.Size = new System.Drawing.Size(175, 24);
-            this.menuItemShow.Text = "显示";
+            this.menuItemShow.Size = new System.Drawing.Size(123, 24);
+            this.menuItemShow.Text = "最小化";
             this.menuItemShow.Click += new System.EventHandler(this.menuItemShow_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
             // 
             // menuItemExit
             // 
             this.menuItemExit.Name = "menuItemExit";
-            this.menuItemExit.Size = new System.Drawing.Size(175, 24);
+            this.menuItemExit.Size = new System.Drawing.Size(123, 24);
             this.menuItemExit.Text = "退出";
             this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
             // 
