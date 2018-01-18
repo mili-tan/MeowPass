@@ -22,6 +22,7 @@ namespace MeowPass
         private void meowButton_Click(object sender, EventArgs e)
         {
             string uPassCrypto = "";
+            string pass = "";
             string uTagCrypto = MeowTool.MyMD5Crypto(tagBox.Text);
             if (shaRButton.Checked)
             {
@@ -38,30 +39,37 @@ namespace MeowPass
             switch (encryptBox.SelectedIndex)
             {
                 case 0:
-                    passBox.Text = MeowTool.MyDESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyDESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 1:
-                    passBox.Text = MeowTool.MyTripleDESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyTripleDESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 2:
-                    passBox.Text = MeowTool.MyAESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyAESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 3:
-                    passBox.Text = MeowTool.MyRC2Crypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyRC2Crypto(uTagCrypto, uPassCrypto);
                     break;
                 case 4:
-                    passBox.Text = MeowTool.MyBlowFishCrypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyBlowFishCrypto(uTagCrypto, uPassCrypto);
                     break;
                 default:
                     break;
             }
+            if (pass.Length < passUpDown.Value+1)
+            {
+                while (!(pass.Length < passUpDown.Value + 1))
+                {
+                    pass += pass;
+                }
+            }
+            passBox.Text = pass.Substring(0, Convert.ToInt32(passUpDown.Value));
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             ShowInTaskbar = false;
             MaximizeBox = false;
-            //MinimizeBox = false;
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             notifyIcon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             encryptBox.SelectedIndex = 0;
