@@ -260,7 +260,7 @@
             this.checkBoxHidePass.TabIndex = 3;
             this.checkBoxHidePass.Text = "隐藏密码";
             this.checkBoxHidePass.UseVisualStyleBackColor = true;
-            this.checkBoxHidePass.CheckedChanged += new System.EventHandler(this.checkBoxHidePass_CheckedChanged);
+            this.checkBoxHidePass.CheckedChanged += new System.EventHandler(this.CheckBoxHidePass_CheckedChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -297,7 +297,7 @@
             this.meowButton.TabIndex = 1;
             this.meowButton.Text = "喵！";
             this.meowButton.UseVisualStyleBackColor = true;
-            this.meowButton.Click += new System.EventHandler(this.meowButton_Click);
+            this.meowButton.Click += new System.EventHandler(this.MeowButton_Click);
             // 
             // buttonCopyToClipboard
             // 
@@ -309,7 +309,7 @@
             this.buttonCopyToClipboard.TabIndex = 2;
             this.buttonCopyToClipboard.Text = "复制到剪贴板";
             this.buttonCopyToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopyToClipboard.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCopyToClipboard.Click += new System.EventHandler(this.ButtonCopy_Click);
             // 
             // label5
             // 
@@ -346,7 +346,7 @@
             this.menuItemShow.Name = "menuItemShow";
             this.menuItemShow.Size = new System.Drawing.Size(123, 24);
             this.menuItemShow.Text = "最小化";
-            this.menuItemShow.Click += new System.EventHandler(this.menuItemShow_Click);
+            this.menuItemShow.Click += new System.EventHandler(this.MenuItemShow_Click);
             // 
             // toolStripSeparator1
             // 
@@ -358,7 +358,7 @@
             this.menuItemExit.Name = "menuItemExit";
             this.menuItemExit.Size = new System.Drawing.Size(123, 24);
             this.menuItemExit.Text = "退出";
-            this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
+            this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
             // MeowDemo
             // 

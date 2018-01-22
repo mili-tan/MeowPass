@@ -19,7 +19,7 @@ namespace MeowPass
             InitializeComponent();
         }
 
-        private void meowButton_Click(object sender, EventArgs e)
+        private void MeowButton_Click(object sender, EventArgs e)
         {
             string uPassCrypto = "";
             string pass = "";
@@ -81,7 +81,7 @@ namespace MeowPass
             }
         }
 
-        private void checkBoxHidePass_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxHidePass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxHidePass.Checked)
             {
@@ -93,7 +93,7 @@ namespace MeowPass
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(passBox.Text);
         }
@@ -136,12 +136,12 @@ namespace MeowPass
             }
         }
 
-        private void menuItemExit_Click(object sender, EventArgs e)
+        private void MenuItemExit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void menuItemShow_Click(object sender, EventArgs e)
+        private void MenuItemShow_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)
             {
