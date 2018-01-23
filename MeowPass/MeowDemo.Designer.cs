@@ -327,7 +327,7 @@
             this.notifyIcon.ContextMenuStrip = this.contextMenu;
             this.notifyIcon.Text = "MeowPass";
             this.notifyIcon.Visible = true;
-            this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
+            this.notifyIcon.DoubleClick += new System.EventHandler(this.NotifyIcon_DoubleClick);
             // 
             // contextMenu
             // 

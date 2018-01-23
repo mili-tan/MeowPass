@@ -120,7 +120,7 @@ namespace MeowPass
             UnregisterHotKey(Handle, 233);
         }
 
-        private void notifyIcon_DoubleClick(object sender, EventArgs e)
+        private void NotifyIcon_DoubleClick(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)
             {

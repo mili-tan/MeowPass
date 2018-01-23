@@ -301,32 +301,32 @@ namespace TaylorHornby.BlowFish
             xr_par = 0;
             for (int i = 0; i < 18; i += 2)
             {
-                encipher();
+                Encipher();
                 bf_P[i] = xl_par;
                 bf_P[i + 1] = xr_par;
             }
 
             for (int i = 0; i < 256; i += 2)
             {
-                encipher();
+                Encipher();
                 bf_s0[i] = xl_par;
                 bf_s0[i + 1] = xr_par;
             }
             for (int i = 0; i < 256; i += 2)
             {
-                encipher();
+                Encipher();
                 bf_s1[i] = xl_par;
                 bf_s1[i + 1] = xr_par;
             }
             for (int i = 0; i < 256; i += 2)
             {
-                encipher();
+                Encipher();
                 bf_s2[i] = xl_par;
                 bf_s2[i + 1] = xr_par;
             }
             for (int i = 0; i < 256; i += 2)
             {
-                encipher();
+                Encipher();
                 bf_s3[i] = xl_par;
                 bf_s3[i + 1] = xr_par;
             }
@@ -453,7 +453,7 @@ namespace TaylorHornby.BlowFish
         private void BlockEncrypt(ref byte[] block)
         {
             SetBlock(block);
-            encipher();
+            Encipher();
             GetBlock(ref block);
         }
 
@@ -464,7 +464,7 @@ namespace TaylorHornby.BlowFish
         private void BlockDecrypt(ref byte[] block)
         {
             SetBlock(block);
-            decipher();
+            Decipher();
             GetBlock(ref block);
         }
 
@@ -524,13 +524,13 @@ namespace TaylorHornby.BlowFish
         /// <summary>
         /// Runs the blowfish algorithm (standard 16 rounds)
         /// </summary>
-        private void encipher()
+        private void Encipher()
         {
             xl_par ^= bf_P[0];
             for (uint i = 0; i < ROUNDS; i += 2)
             {
-                xr_par = round(xr_par, xl_par, i + 1);
-                xl_par = round(xl_par, xr_par, i + 2);
+                xr_par = Round(xr_par, xl_par, i + 1);
+                xl_par = Round(xl_par, xr_par, i + 2);
             }
             xr_par = xr_par ^ bf_P[17];
 
@@ -543,13 +543,13 @@ namespace TaylorHornby.BlowFish
         /// <summary>
         /// Runs the blowfish algorithm in reverse (standard 16 rounds)
         /// </summary>
-        private void decipher()
+        private void Decipher()
         {
             xl_par ^= bf_P[17];
             for (uint i = 16; i > 0; i -= 2)
             {
-                xr_par = round(xr_par, xl_par, i);
-                xl_par = round(xl_par, xr_par, i - 1);
+                xr_par = Round(xr_par, xl_par, i);
+                xl_par = Round(xl_par, xr_par, i - 1);
             }
             xr_par = xr_par ^ bf_P[0];
 
@@ -566,10 +566,10 @@ namespace TaylorHornby.BlowFish
         /// <param name="b">See spec</param>
         /// <param name="n">See spec</param>
         /// <returns></returns>
-        private uint round(uint a, uint b, uint n)
+        private uint Round(uint a, uint b, uint n)
         {
-            uint x1 = (bf_s0[wordByte0(b)] + bf_s1[wordByte1(b)]) ^ bf_s2[wordByte2(b)];
-            uint x2 = x1 + bf_s3[this.wordByte3(b)];
+            uint x1 = (bf_s0[WordByte0(b)] + bf_s1[WordByte1(b)]) ^ bf_s2[WordByte2(b)];
+            uint x2 = x1 + bf_s3[this.WordByte3(b)];
             uint x3 = x2 ^ bf_P[n];
             return x3 ^ a;
         }
@@ -791,25 +791,25 @@ namespace TaylorHornby.BlowFish
         #region Conversions
 
         //gets the first byte in a uint
-        private byte wordByte0(uint w)
+        private byte WordByte0(uint w)
         {
             return (byte)(w / 256 / 256 / 256 % 256);
         }
 
         //gets the second byte in a uint
-        private byte wordByte1(uint w)
+        private byte WordByte1(uint w)
         {
             return (byte)(w / 256 / 256 % 256);
         }
 
         //gets the third byte in a uint
-        private byte wordByte2(uint w)
+        private byte WordByte2(uint w)
         {
             return (byte)(w / 256 % 256);
         }
 
         //gets the fourth byte in a uint
-        private byte wordByte3(uint w)
+        private byte WordByte3(uint w)
         {
             return (byte)(w % 256);
         }

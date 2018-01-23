@@ -56,15 +56,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlowFish.cs" />
-    <Compile Include="CRC.cs" />
+    <Compile Include="Tools\BlowFish.cs" />
+    <Compile Include="Tools\CRC.cs" />
     <Compile Include="MeowDemo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MeowDemo.Designer.cs">
       <DependentUpon>MeowDemo.cs</DependentUpon>
     </Compile>
-    <Compile Include="MeowTool.cs" />
+    <Compile Include="Tools\MeowTool.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MeowDemo.resx">
