@@ -19,53 +19,6 @@ namespace MeowPass
             InitializeComponent();
         }
 
-        private void MeowButton_Click(object sender, EventArgs e)
-        {
-            string uPassCrypto = "";
-            string pass = "";
-            string uTagCrypto = MeowTool.MyMD5Crypto(tagBox.Text);
-            if (shaRButton.Checked)
-            {
-                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
-            }
-            else if (md5RButton.Checked)
-            {
-                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyMD5Crypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
-            }
-            else if (crcRButton.Checked)
-            {
-                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
-            }
-            switch (encryptBox.SelectedIndex)
-            {
-                case 0:
-                    pass = MeowTool.MyDESCrypto(uTagCrypto, uPassCrypto);
-                    break;
-                case 1:
-                    pass = MeowTool.MyTripleDESCrypto(uTagCrypto, uPassCrypto);
-                    break;
-                case 2:
-                    pass = MeowTool.MyAESCrypto(uTagCrypto, uPassCrypto);
-                    break;
-                case 3:
-                    pass = MeowTool.MyRC2Crypto(uTagCrypto, uPassCrypto);
-                    break;
-                case 4:
-                    pass = MeowTool.MyBlowFishCrypto(uTagCrypto, uPassCrypto);
-                    break;
-                default:
-                    break;
-            }
-            if (pass.Length < passUpDown.Value+1)
-            {
-                while (!(pass.Length < passUpDown.Value + 1))
-                {
-                    pass += pass;
-                }
-            }
-            passBox.Text = pass.Substring(0, Convert.ToInt32(passUpDown.Value));
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             ShowInTaskbar = false;
@@ -136,10 +89,7 @@ namespace MeowPass
             }
         }
 
-        private void MenuItemExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void MenuItemExit_Click(object sender, EventArgs e) => Close();
 
         private void MenuItemShow_Click(object sender, EventArgs e)
         {
@@ -170,5 +120,62 @@ namespace MeowPass
             Activate();
             ShowInTaskbar = false;
         }
+
+        private void GenMeowPass()
+        {
+            string uPassCrypto = "";
+            string pass = "";
+            string uTagCrypto = MeowTool.MyMD5Crypto(tagBox.Text);
+            if (shaRButton.Checked)
+            {
+                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+            }
+            else if (md5RButton.Checked)
+            {
+                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyMD5Crypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+            }
+            else if (crcRButton.Checked)
+            {
+                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+            }
+            switch (encryptBox.SelectedIndex)
+            {
+                case 0:
+                    pass = MeowTool.MyDESCrypto(uTagCrypto, uPassCrypto);
+                    break;
+                case 1:
+                    pass = MeowTool.MyTripleDESCrypto(uTagCrypto, uPassCrypto);
+                    break;
+                case 2:
+                    pass = MeowTool.MyAESCrypto(uTagCrypto, uPassCrypto);
+                    break;
+                case 3:
+                    pass = MeowTool.MyRC2Crypto(uTagCrypto, uPassCrypto);
+                    break;
+                case 4:
+                    pass = MeowTool.MyBlowFishCrypto(uTagCrypto, uPassCrypto);
+                    break;
+                default:
+                    break;
+            }
+            if (pass.Length < passUpDown.Value + 1)
+            {
+                while (!(pass.Length < passUpDown.Value + 1))
+                {
+                    pass += pass;
+                }
+            }
+            passBox.Text = pass.Substring(0, Convert.ToInt32(passUpDown.Value));
+        }
+
+        private void EncryptBox_SelectedIndexChanged(object sender, EventArgs e) => GenMeowPass();
+
+        private void TableLayoutPanel2_Click(object sender, EventArgs e) => GenMeowPass();
+
+        private void PassUpDown_ValueChanged(object sender, EventArgs e) => GenMeowPass();
+
+        private void TagBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
+
+        private void UPassBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
     }
 }

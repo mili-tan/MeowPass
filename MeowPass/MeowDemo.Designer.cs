@@ -47,7 +47,6 @@
             this.checkBoxHidePass = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.passUpDown = new System.Windows.Forms.NumericUpDown();
-            this.meowButton = new System.Windows.Forms.Button();
             this.buttonCopyToClipboard = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -108,6 +107,7 @@
             this.tagBox.Name = "tagBox";
             this.tagBox.Size = new System.Drawing.Size(278, 25);
             this.tagBox.TabIndex = 0;
+            this.tagBox.TextChanged += new System.EventHandler(this.TagBox_TextChanged);
             // 
             // label1
             // 
@@ -147,6 +147,7 @@
             this.uPassBox.PasswordChar = '*';
             this.uPassBox.Size = new System.Drawing.Size(278, 25);
             this.uPassBox.TabIndex = 1;
+            this.uPassBox.TextChanged += new System.EventHandler(this.UPassBox_TextChanged);
             // 
             // label4
             // 
@@ -173,6 +174,7 @@
             this.encryptBox.Name = "encryptBox";
             this.encryptBox.Size = new System.Drawing.Size(278, 23);
             this.encryptBox.TabIndex = 6;
+            this.encryptBox.SelectedIndexChanged += new System.EventHandler(this.EncryptBox_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -189,6 +191,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(278, 28);
             this.tableLayoutPanel2.TabIndex = 7;
+            this.tableLayoutPanel2.Click += new System.EventHandler(this.TableLayoutPanel2_Click);
             // 
             // md5RButton
             // 
@@ -278,6 +281,16 @@
             // passUpDown
             // 
             this.passUpDown.Location = new System.Drawing.Point(3, 3);
+            this.passUpDown.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.passUpDown.Minimum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.passUpDown.Name = "passUpDown";
             this.passUpDown.Size = new System.Drawing.Size(178, 25);
             this.passUpDown.TabIndex = 9;
@@ -286,24 +299,13 @@
             0,
             0,
             0});
-            // 
-            // meowButton
-            // 
-            this.meowButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.meowButton.Location = new System.Drawing.Point(13, 229);
-            this.meowButton.Name = "meowButton";
-            this.meowButton.Size = new System.Drawing.Size(365, 23);
-            this.meowButton.TabIndex = 1;
-            this.meowButton.Text = "喵！";
-            this.meowButton.UseVisualStyleBackColor = true;
-            this.meowButton.Click += new System.EventHandler(this.MeowButton_Click);
+            this.passUpDown.ValueChanged += new System.EventHandler(this.PassUpDown_ValueChanged);
             // 
             // buttonCopyToClipboard
             // 
             this.buttonCopyToClipboard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCopyToClipboard.Location = new System.Drawing.Point(13, 258);
+            this.buttonCopyToClipboard.Location = new System.Drawing.Point(13, 232);
             this.buttonCopyToClipboard.Name = "buttonCopyToClipboard";
             this.buttonCopyToClipboard.Size = new System.Drawing.Size(365, 23);
             this.buttonCopyToClipboard.TabIndex = 2;
@@ -315,7 +317,7 @@
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Location = new System.Drawing.Point(0, 279);
+            this.label5.Location = new System.Drawing.Point(0, 253);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(390, 35);
             this.label5.TabIndex = 3;
@@ -365,9 +367,8 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 314);
+            this.ClientSize = new System.Drawing.Size(390, 288);
             this.Controls.Add(this.buttonCopyToClipboard);
-            this.Controls.Add(this.meowButton);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -402,7 +403,6 @@
         private System.Windows.Forms.TextBox uPassBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox encryptBox;
-        private System.Windows.Forms.Button meowButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.RadioButton md5RButton;
         private System.Windows.Forms.RadioButton shaRButton;
