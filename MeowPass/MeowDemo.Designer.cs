@@ -30,12 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkBoxHideUPass = new System.Windows.Forms.CheckBox();
+            this.uPassBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tagBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.uPassBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.encryptBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,12 +56,15 @@
             this.menuItemShow = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passUpDown)).BeginInit();
             this.contextMenu.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,12 +72,12 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.tagBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.uPassBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.encryptBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
@@ -90,22 +95,61 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(365, 210);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.19217F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.80783F));
+            this.tableLayoutPanel5.Controls.Add(this.checkBoxHideUPass, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.uPassBox, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(81, 37);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(281, 28);
+            this.tableLayoutPanel5.TabIndex = 4;
+            // 
+            // checkBoxHideUPass
+            // 
+            this.checkBoxHideUPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxHideUPass.AutoSize = true;
+            this.checkBoxHideUPass.Checked = true;
+            this.checkBoxHideUPass.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxHideUPass.Font = new System.Drawing.Font("宋体", 7F);
+            this.checkBoxHideUPass.Location = new System.Drawing.Point(188, 5);
+            this.checkBoxHideUPass.Name = "checkBoxHideUPass";
+            this.checkBoxHideUPass.Size = new System.Drawing.Size(90, 17);
+            this.checkBoxHideUPass.TabIndex = 4;
+            this.checkBoxHideUPass.Text = "隐藏密码";
+            this.checkBoxHideUPass.UseVisualStyleBackColor = true;
+            this.checkBoxHideUPass.CheckedChanged += new System.EventHandler(this.CheckBoxHideUPass_CheckedChanged);
+            // 
+            // uPassBox
+            // 
+            this.uPassBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.uPassBox.Location = new System.Drawing.Point(3, 3);
+            this.uPassBox.Name = "uPassBox";
+            this.uPassBox.PasswordChar = '*';
+            this.uPassBox.Size = new System.Drawing.Size(179, 25);
+            this.uPassBox.TabIndex = 1;
+            this.uPassBox.TextChanged += new System.EventHandler(this.UPassBox_TextChanged);
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 182);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 15);
+            this.label6.Size = new System.Drawing.Size(72, 15);
             this.label6.TabIndex = 8;
             this.label6.Text = "密码位数";
             // 
             // tagBox
             // 
             this.tagBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tagBox.Location = new System.Drawing.Point(84, 4);
+            this.tagBox.Location = new System.Drawing.Point(3, 3);
             this.tagBox.Name = "tagBox";
-            this.tagBox.Size = new System.Drawing.Size(278, 25);
+            this.tagBox.Size = new System.Drawing.Size(275, 25);
             this.tagBox.TabIndex = 0;
             this.tagBox.TextChanged += new System.EventHandler(this.TagBox_TextChanged);
             // 
@@ -115,7 +159,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.Size = new System.Drawing.Size(72, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "记忆标签";
             // 
@@ -125,7 +169,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 15);
+            this.label3.Size = new System.Drawing.Size(72, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "最终密码";
             // 
@@ -135,19 +179,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 15);
+            this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "记忆密码";
-            // 
-            // uPassBox
-            // 
-            this.uPassBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.uPassBox.Location = new System.Drawing.Point(84, 38);
-            this.uPassBox.Name = "uPassBox";
-            this.uPassBox.PasswordChar = '*';
-            this.uPassBox.Size = new System.Drawing.Size(278, 25);
-            this.uPassBox.TabIndex = 1;
-            this.uPassBox.TextChanged += new System.EventHandler(this.UPassBox_TextChanged);
             // 
             // label4
             // 
@@ -155,7 +189,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 15);
+            this.label4.Size = new System.Drawing.Size(72, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "加密算法";
             // 
@@ -170,9 +204,9 @@
             "AES",
             "RC2",
             "BlowFish"});
-            this.encryptBox.Location = new System.Drawing.Point(84, 73);
+            this.encryptBox.Location = new System.Drawing.Point(81, 73);
             this.encryptBox.Name = "encryptBox";
-            this.encryptBox.Size = new System.Drawing.Size(278, 23);
+            this.encryptBox.Size = new System.Drawing.Size(281, 23);
             this.encryptBox.TabIndex = 6;
             this.encryptBox.SelectedIndexChanged += new System.EventHandler(this.EncryptBox_SelectedIndexChanged);
             // 
@@ -185,7 +219,7 @@
             this.tableLayoutPanel2.Controls.Add(this.md5RButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.shaRButton, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.crcRButton, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(84, 105);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(81, 105);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -235,7 +269,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.45324F));
             this.tableLayoutPanel3.Controls.Add(this.passBox, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.checkBoxHidePass, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(84, 139);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(81, 139);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -271,7 +305,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.54676F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.45324F));
             this.tableLayoutPanel4.Controls.Add(this.passUpDown, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(84, 173);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(81, 173);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -362,6 +396,18 @@
             this.menuItemExit.Text = "退出";
             this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.tagBox, 0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(81, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(281, 28);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
             // MeowDemo
             // 
             this.AllowDrop = true;
@@ -381,6 +427,8 @@
             this.SizeChanged += new System.EventHandler(this.MeowDemo_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -388,6 +436,8 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.passUpDown)).EndInit();
             this.contextMenu.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -419,6 +469,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown passUpDown;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.CheckBox checkBoxHideUPass;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
     }
 }
 

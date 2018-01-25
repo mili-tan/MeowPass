@@ -177,5 +177,17 @@ namespace MeowPass
         private void TagBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
 
         private void UPassBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
+
+        private void CheckBoxHideUPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHideUPass.Checked)
+            {
+                uPassBox.PasswordChar = '*';
+            }
+            else
+            {
+                uPassBox.PasswordChar = new char();
+            }
+        }
     }
 }
