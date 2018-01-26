@@ -416,6 +416,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(390, 288);
             this.Controls.Add(this.buttonCopyToClipboard);
             this.Controls.Add(this.tableLayoutPanel1);
