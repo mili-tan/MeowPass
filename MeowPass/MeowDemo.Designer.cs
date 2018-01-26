@@ -30,11 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tagBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.checkBoxHideUPass = new System.Windows.Forms.CheckBox();
             this.uPassBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tagBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,15 +57,14 @@
             this.menuItemShow = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passUpDown)).BeginInit();
             this.contextMenu.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -94,6 +94,27 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(365, 210);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.tagBox, 0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(81, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(281, 28);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
+            // tagBox
+            // 
+            this.tagBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tagBox.Location = new System.Drawing.Point(3, 3);
+            this.tagBox.Name = "tagBox";
+            this.tagBox.Size = new System.Drawing.Size(275, 25);
+            this.tagBox.TabIndex = 0;
+            this.tagBox.TextChanged += new System.EventHandler(this.TagBox_TextChanged);
             // 
             // tableLayoutPanel5
             // 
@@ -143,15 +164,6 @@
             this.label6.Size = new System.Drawing.Size(72, 15);
             this.label6.TabIndex = 8;
             this.label6.Text = "密码位数";
-            // 
-            // tagBox
-            // 
-            this.tagBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tagBox.Location = new System.Drawing.Point(3, 3);
-            this.tagBox.Name = "tagBox";
-            this.tagBox.Size = new System.Drawing.Size(275, 25);
-            this.tagBox.TabIndex = 0;
-            this.tagBox.TextChanged += new System.EventHandler(this.TagBox_TextChanged);
             // 
             // label1
             // 
@@ -239,6 +251,7 @@
             this.md5RButton.TabStop = true;
             this.md5RButton.Text = "MD5";
             this.md5RButton.UseVisualStyleBackColor = true;
+            this.md5RButton.CheckedChanged += new System.EventHandler(this.Md5RButton_CheckedChanged);
             // 
             // shaRButton
             // 
@@ -250,6 +263,7 @@
             this.shaRButton.TabIndex = 1;
             this.shaRButton.Text = "SHA";
             this.shaRButton.UseVisualStyleBackColor = true;
+            this.shaRButton.CheckedChanged += new System.EventHandler(this.ShaRButton_CheckedChanged);
             // 
             // crcRButton
             // 
@@ -261,6 +275,7 @@
             this.crcRButton.TabIndex = 2;
             this.crcRButton.Text = "CRC";
             this.crcRButton.UseVisualStyleBackColor = true;
+            this.crcRButton.CheckedChanged += new System.EventHandler(this.CrcRButton_CheckedChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -396,18 +411,6 @@
             this.menuItemExit.Text = "退出";
             this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.tagBox, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(81, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(281, 28);
-            this.tableLayoutPanel6.TabIndex = 4;
-            // 
             // MeowDemo
             // 
             this.AllowDrop = true;
@@ -422,11 +425,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MeowDemo";
             this.TopMost = true;
+            this.Activated += new System.EventHandler(this.MeowDemo_Activated);
+            this.Deactivate += new System.EventHandler(this.MeowDemo_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MeowDemo_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.MeowDemo_SizeChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -436,8 +443,6 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.passUpDown)).EndInit();
             this.contextMenu.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -178,6 +178,12 @@ namespace MeowPass
 
         private void UPassBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
 
+        private void Md5RButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
+
+        private void ShaRButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
+
+        private void CrcRButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
+
         private void CheckBoxHideUPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxHideUPass.Checked)
@@ -188,6 +194,21 @@ namespace MeowPass
             {
                 uPassBox.PasswordChar = new char();
             }
+        }
+
+        private void MeowDemo_Activated(object sender, EventArgs e)
+        {
+            Opacity = 1;
+        }
+
+        private void MeowDemo_Deactivate(object sender, EventArgs e)
+        {
+            try
+            {
+                Opacity = 0.5;
+            }
+            catch
+            {}
         }
     }
 }
