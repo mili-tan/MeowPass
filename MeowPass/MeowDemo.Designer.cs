@@ -303,8 +303,6 @@
             // 
             this.checkBoxHidePass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxHidePass.AutoSize = true;
-            this.checkBoxHidePass.Checked = true;
-            this.checkBoxHidePass.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxHidePass.Font = new System.Drawing.Font("宋体", 7F);
             this.checkBoxHidePass.Location = new System.Drawing.Point(187, 5);
             this.checkBoxHidePass.Name = "checkBoxHidePass";
