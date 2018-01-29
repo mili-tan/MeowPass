@@ -71,6 +71,7 @@ namespace MeowPass
         private void MeowDemo_FormClosing(object sender, FormClosingEventArgs e)
         {
             UnregisterHotKey(Handle, 233);
+            notifyIcon.Visible = false;
         }
 
         private void NotifyIcon_DoubleClick(object sender, EventArgs e)
