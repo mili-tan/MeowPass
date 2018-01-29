@@ -55,6 +55,7 @@
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuItemShow = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
@@ -384,11 +385,12 @@
             this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemShow,
+            this.menuItemAbout,
             this.toolStripSeparator1,
             this.menuItemExit});
             this.contextMenu.Name = "contextMenu";
             this.contextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.contextMenu.Size = new System.Drawing.Size(124, 58);
+            this.contextMenu.Size = new System.Drawing.Size(124, 82);
             // 
             // menuItemShow
             // 
@@ -396,6 +398,13 @@
             this.menuItemShow.Size = new System.Drawing.Size(123, 24);
             this.menuItemShow.Text = "最小化";
             this.menuItemShow.Click += new System.EventHandler(this.MenuItemShow_Click);
+            // 
+            // menuItemAbout
+            // 
+            this.menuItemAbout.Name = "menuItemAbout";
+            this.menuItemAbout.Size = new System.Drawing.Size(123, 24);
+            this.menuItemAbout.Text = "关于";
+            this.menuItemAbout.Click += new System.EventHandler(this.MenuItemAbout_Click);
             // 
             // toolStripSeparator1
             // 
@@ -476,6 +485,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.CheckBox checkBoxHideUPass;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.ToolStripMenuItem menuItemAbout;
     }
 }
 

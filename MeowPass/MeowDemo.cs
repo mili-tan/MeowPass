@@ -210,5 +210,11 @@ namespace MeowPass
             catch
             {}
         }
+
+        private void MenuItemAbout_Click(object sender, EventArgs e)
+        {
+            new AboutForm().Show();
+            MinimizedForm();
+        }
     }
 }
