@@ -27,6 +27,7 @@ namespace MeowPass
             notifyIcon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             encryptBox.SelectedIndex = 0;
             RegisterHotKey(Handle, 233, 3, Keys.Enter);
+            RegisterHotKey(Handle, 234, 3, Keys.M);
 
             if (checkBoxHidePass.Checked)
             {
@@ -63,6 +64,10 @@ namespace MeowPass
                             new InputSimulator().Keyboard.TextEntry(passBox.Text);
                         }
                     }
+                    if (m.WParam.ToString() == "234")
+                    {
+                        menuItemShow.PerformClick();
+                    }
                     break;
             }
             base.WndProc(ref m);
@@ -71,6 +76,7 @@ namespace MeowPass
         private void MeowDemo_FormClosing(object sender, FormClosingEventArgs e)
         {
             UnregisterHotKey(Handle, 233);
+            UnregisterHotKey(Handle, 234);
             notifyIcon.Visible = false;
         }
 
