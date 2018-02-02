@@ -34,5 +34,18 @@ namespace MeowPass
         {
             Process.Start("https://www.mozilla.org/en-US/MPL/2.0/");
         }
+
+        private void PictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            label1.Text = "MeowPass Rember";
+            BackColor = Color.Black;
+            label1.ForeColor = Color.LightGray;
+            label2.ForeColor = Color.LightGray;
+            label3.ForeColor = Color.LightGray;
+            label4.ForeColor = Color.LightGray;
+            label5.ForeColor = Color.LightGray;
+            label6.Hide();
+            Opacity = 0.8;
+        }
     }
 }
