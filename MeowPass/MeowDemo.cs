@@ -128,11 +128,10 @@ namespace MeowPass
             ShowInTaskbar = false;
         }
 
-        private void GenMeowPass()
+        private string GenMeowPass(string pass,string tag)
         {
             string uPassCrypto = "";
-            string pass = "";
-            string uTagCrypto = MeowTool.MyMD5Crypto(tagBox.Text);
+            string uTagCrypto = MeowTool.MyMD5Crypto(tag);
             if (shaRButton.Checked)
             {
                 uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
@@ -148,19 +147,19 @@ namespace MeowPass
             switch (encryptBox.SelectedIndex)
             {
                 case 0:
-                    pass = MeowTool.MyDESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyDESCrypto(uTagCrypto, "");
                     break;
                 case 1:
-                    pass = MeowTool.MyTripleDESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyTripleDESCrypto(uTagCrypto, "");
                     break;
                 case 2:
-                    pass = MeowTool.MyAESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyAESCrypto(uTagCrypto, "");
                     break;
                 case 3:
-                    pass = MeowTool.MyRC2Crypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyRC2Crypto(uTagCrypto, "");
                     break;
                 case 4:
-                    pass = MeowTool.MyBlowFishCrypto(uTagCrypto, uPassCrypto);
+                    pass = MeowTool.MyBlowFishCrypto(uTagCrypto, "");
                     break;
                 default:
                     break;
@@ -172,24 +171,24 @@ namespace MeowPass
                     pass += pass;
                 }
             }
-            passBox.Text = pass.Substring(0, Convert.ToInt32(passUpDown.Value));
+            return pass.Substring(0, Convert.ToInt32(passUpDown.Value));
         }
 
-        private void EncryptBox_SelectedIndexChanged(object sender, EventArgs e) => GenMeowPass();
+        private void EncryptBox_SelectedIndexChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text,tagBox.Text);
 
-        private void TableLayoutPanel2_Click(object sender, EventArgs e) => GenMeowPass();
+        private void TableLayoutPanel2_Click(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
 
-        private void PassUpDown_ValueChanged(object sender, EventArgs e) => GenMeowPass();
+        private void PassUpDown_ValueChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
 
-        private void TagBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
+        private void TagBox_TextChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
 
-        private void UPassBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
+        private void UPassBox_TextChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
 
-        private void Md5RButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
+        private void Md5RButton_CheckedChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
 
-        private void ShaRButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
+        private void ShaRButton_CheckedChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
 
-        private void CrcRButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
+        private void CrcRButton_CheckedChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
 
         private void CheckBoxHideUPass_CheckedChanged(object sender, EventArgs e)
         {
