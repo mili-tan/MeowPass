@@ -5,6 +5,8 @@ using WindowsInput;
 using System.Drawing;
 using System.Threading;
 
+using static MeowPass.MeowTool;
+
 namespace MeowPass
 {
     public partial class MeowDemo : Form
@@ -131,35 +133,35 @@ namespace MeowPass
         private string GenMeowPass(string pass,string tag,int passLength)
         {
             string uPassCrypto = "";
-            string uTagCrypto = MeowTool.MyMD5Crypto(tag);
+            string uTagCrypto = MyMD5Crypto(tag);
             if (shaRButton.Checked)
             {
-                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMD5Crypto(MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
             else if (md5RButton.Checked)
             {
-                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyMD5Crypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMD5Crypto(MyMD5Crypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
             else if (crcRButton.Checked)
             {
-                uPassCrypto = MeowTool.MyMD5Crypto(MeowTool.MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMD5Crypto(MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
             switch (encryptBox.SelectedIndex)
             {
                 case 0:
-                    pass = MeowTool.MyDESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MyDESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 1:
-                    pass = MeowTool.MyTripleDESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MyTripleDESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 2:
-                    pass = MeowTool.MyAESCrypto(uTagCrypto, uPassCrypto);
+                    pass = MyAESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 3:
-                    pass = MeowTool.MyRC2Crypto(uTagCrypto, uPassCrypto);
+                    pass = MyRC2Crypto(uTagCrypto, uPassCrypto);
                     break;
                 case 4:
-                    pass = MeowTool.MyBlowFishCrypto(uTagCrypto, uPassCrypto);
+                    pass = MyBlowFishCrypto(uTagCrypto, uPassCrypto);
                     break;
                 default:
                     break;
