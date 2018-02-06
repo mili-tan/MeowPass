@@ -128,7 +128,7 @@ namespace MeowPass
             ShowInTaskbar = false;
         }
 
-        private string GenMeowPass(string pass,string tag)
+        private string GenMeowPass(string pass,string tag,int passLength)
         {
             string uPassCrypto = "";
             string uTagCrypto = MeowTool.MyMD5Crypto(tag);
@@ -164,31 +164,36 @@ namespace MeowPass
                 default:
                     break;
             }
-            if (pass.Length < passUpDown.Value + 1)
+            if (pass.Length < passLength + 1)
             {
-                while (!(pass.Length < passUpDown.Value + 1))
+                while (!(pass.Length < passLength + 1))
                 {
                     pass += pass;
                 }
             }
-            return pass.Substring(0, Convert.ToInt32(passUpDown.Value));
+            return pass.Substring(0, passLength);
         }
 
-        private void EncryptBox_SelectedIndexChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text,tagBox.Text);
+        private void GenMeowPass()
+        {
+            passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text, Convert.ToInt32(passUpDown.Value));
+        }
 
-        private void TableLayoutPanel2_Click(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
+        private void EncryptBox_SelectedIndexChanged(object sender, EventArgs e) => GenMeowPass();
 
-        private void PassUpDown_ValueChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
+        private void TableLayoutPanel2_Click(object sender, EventArgs e) => GenMeowPass();
 
-        private void TagBox_TextChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
+        private void PassUpDown_ValueChanged(object sender, EventArgs e) => GenMeowPass();
 
-        private void UPassBox_TextChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
+        private void TagBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
 
-        private void Md5RButton_CheckedChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
+        private void UPassBox_TextChanged(object sender, EventArgs e) => GenMeowPass();
 
-        private void ShaRButton_CheckedChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
+        private void Md5RButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
 
-        private void CrcRButton_CheckedChanged(object sender, EventArgs e) => passBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text);
+        private void ShaRButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
+
+        private void CrcRButton_CheckedChanged(object sender, EventArgs e) => GenMeowPass();
 
         private void CheckBoxHideUPass_CheckedChanged(object sender, EventArgs e)
         {
