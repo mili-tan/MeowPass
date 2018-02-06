@@ -147,19 +147,19 @@ namespace MeowPass
             switch (encryptBox.SelectedIndex)
             {
                 case 0:
-                    pass = MeowTool.MyDESCrypto(uTagCrypto, "");
+                    pass = MeowTool.MyDESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 1:
-                    pass = MeowTool.MyTripleDESCrypto(uTagCrypto, "");
+                    pass = MeowTool.MyTripleDESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 2:
-                    pass = MeowTool.MyAESCrypto(uTagCrypto, "");
+                    pass = MeowTool.MyAESCrypto(uTagCrypto, uPassCrypto);
                     break;
                 case 3:
-                    pass = MeowTool.MyRC2Crypto(uTagCrypto, "");
+                    pass = MeowTool.MyRC2Crypto(uTagCrypto, uPassCrypto);
                     break;
                 case 4:
-                    pass = MeowTool.MyBlowFishCrypto(uTagCrypto, "");
+                    pass = MeowTool.MyBlowFishCrypto(uTagCrypto, uPassCrypto);
                     break;
                 default:
                     break;
