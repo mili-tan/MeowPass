@@ -297,6 +297,7 @@
             this.passBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.passBox.Location = new System.Drawing.Point(3, 3);
             this.passBox.Name = "passBox";
+            this.passBox.ReadOnly = true;
             this.passBox.Size = new System.Drawing.Size(178, 25);
             this.passBox.TabIndex = 2;
             // 
