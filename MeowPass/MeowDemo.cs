@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Threading;
 
 using static MeowPass.MeowTool;
+using System.Diagnostics;
 
 namespace MeowPass
 {
@@ -19,6 +20,13 @@ namespace MeowPass
         public MeowDemo()
         {
             InitializeComponent();
+
+            Process[] processes = Process.GetProcessesByName(Application.CompanyName);
+            if (processes.Length > 1)
+            {
+                MessageBox.Show("已有一个实例正在运行,请不要重复启动", "MeowPass", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Environment.Exit(1);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
