@@ -372,6 +372,7 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "[或按下Ctrl+Alt+Enter模拟键入]";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.DoubleClick += new System.EventHandler(this.label5_DoubleClick);
             // 
             // notifyIcon
             // 

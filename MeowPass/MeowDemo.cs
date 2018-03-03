@@ -4,9 +4,8 @@ using System.Windows.Forms;
 using WindowsInput;
 using System.Drawing;
 using System.Threading;
-
-using static MeowPass.MeowTool;
 using System.Diagnostics;
+using static MeowPass.MeowTool;
 
 namespace MeowPass
 {
@@ -236,6 +235,11 @@ namespace MeowPass
         {
             new AboutForm().Show();
             MinimizedForm();
+        }
+
+        private void label5_DoubleClick(object sender, EventArgs e)
+        {
+            new MeowBeta().Show();
         }
     }
 }

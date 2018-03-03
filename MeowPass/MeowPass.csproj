@@ -39,6 +39,9 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin">
+      <HintPath>C:\Users\81977\Desktop\Library\MD YH\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,6 +65,12 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeowBeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeowBeta.Designer.cs">
+      <DependentUpon>MeowBeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\BlowFish.cs" />
     <Compile Include="Tools\CRC.cs" />
     <Compile Include="MeowDemo.cs">
@@ -75,6 +84,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeowBeta.resx">
+      <DependentUpon>MeowBeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeowDemo.resx">
       <DependentUpon>MeowDemo.cs</DependentUpon>
