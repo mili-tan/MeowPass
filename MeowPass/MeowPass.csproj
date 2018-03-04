@@ -118,6 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILMergeOrder.txt" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\tag.png" />
     <None Include="Resources\MeowDemo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
