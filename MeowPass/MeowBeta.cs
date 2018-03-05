@@ -28,6 +28,12 @@ namespace MeowPass
         private void MeowBeta_Load(object sender, EventArgs e)
         {
             //listView1.Items[0].Text = "DES";
+
+            pictureBox3.Visible = false;
+            Bitmap b = new Bitmap(panel1.Width, panel1.Height);
+            panel1.DrawToBitmap(b, new Rectangle(0, 0, b.Width, b.Height));
+            pictureBox3.Visible = true;
+            panel1.BackgroundImage = b;
         }
     }
 }
