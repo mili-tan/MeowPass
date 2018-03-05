@@ -27,7 +27,7 @@ namespace MeowPass
 
         private void MeowBeta_Load(object sender, EventArgs e)
         {
-            listView1.Items[0].Text = "DES";
+            //listView1.Items[0].Text = "DES";
         }
     }
 }

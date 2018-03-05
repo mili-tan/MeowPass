@@ -28,17 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
-            "DES",
-            "1"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
-            "TripleDES",
-            "2"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
-            "AES",
-            "3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("RC2");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("BlowFish");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "DES"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World));
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("TripleDES");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("AES");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("RC2");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("BlowFish");
             this.passBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tagBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.listView1 = new MaterialSkin.Controls.MaterialListView();
@@ -64,7 +59,7 @@
             this.passBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.passBox.Depth = 0;
             this.passBox.Hint = " 记忆密码";
-            this.passBox.Location = new System.Drawing.Point(43, 45);
+            this.passBox.Location = new System.Drawing.Point(42, 45);
             this.passBox.MaxLength = 32767;
             this.passBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.passBox.Name = "passBox";
@@ -72,7 +67,7 @@
             this.passBox.SelectedText = "";
             this.passBox.SelectionLength = 0;
             this.passBox.SelectionStart = 0;
-            this.passBox.Size = new System.Drawing.Size(324, 29);
+            this.passBox.Size = new System.Drawing.Size(325, 29);
             this.passBox.TabIndex = 1;
             this.passBox.TabStop = false;
             this.passBox.UseSystemPasswordChar = false;
@@ -82,7 +77,7 @@
             this.tagBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tagBox.Depth = 0;
             this.tagBox.Hint = " 记忆标签";
-            this.tagBox.Location = new System.Drawing.Point(43, 5);
+            this.tagBox.Location = new System.Drawing.Point(42, 5);
             this.tagBox.MaxLength = 32767;
             this.tagBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.tagBox.Name = "tagBox";
@@ -90,7 +85,7 @@
             this.tagBox.SelectedText = "";
             this.tagBox.SelectionLength = 0;
             this.tagBox.SelectionStart = 0;
-            this.tagBox.Size = new System.Drawing.Size(324, 29);
+            this.tagBox.Size = new System.Drawing.Size(325, 29);
             this.tagBox.TabIndex = 0;
             this.tagBox.TabStop = false;
             this.tagBox.UseSystemPasswordChar = false;
@@ -98,7 +93,6 @@
             // listView1
             // 
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.listView1.Depth = 0;
@@ -106,18 +100,16 @@
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25});
-            this.listView1.LabelWrap = false;
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.listView1.Location = new System.Drawing.Point(3, 142);
             this.listView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.listView1.MouseState = MaterialSkin.MouseState.OUT;
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.OwnerDraw = true;
             this.listView1.Scrollable = false;
             this.listView1.Size = new System.Drawing.Size(370, 307);
             this.listView1.TabIndex = 2;
@@ -252,7 +244,7 @@
             this.pictureBox2.Image = global::MeowPass.Properties.Resources.key;
             this.pictureBox2.Location = new System.Drawing.Point(3, 43);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox2.Size = new System.Drawing.Size(33, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -262,7 +254,7 @@
             this.pictureBox1.Image = global::MeowPass.Properties.Resources.tag;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
