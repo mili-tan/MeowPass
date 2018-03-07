@@ -35,5 +35,20 @@ namespace MeowPass
             pictureBox3.Visible = true;
             panel1.BackgroundImage = b;
         }
+
+        private void label5_DoubleClick(object sender, EventArgs e)
+        {
+            tableLayoutPanel4.Visible = !tableLayoutPanel4.Visible;
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            textBox1.UseSystemPasswordChar = false;
+        }
+
+        private void label1_MouseUp(object sender, MouseEventArgs e)
+        {
+            textBox1.UseSystemPasswordChar = true;
+        }
     }
 }

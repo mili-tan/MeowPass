@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem76 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
             "DES"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World));
-            System.Windows.Forms.ListViewItem listViewItem77 = new System.Windows.Forms.ListViewItem("TripleDES");
-            System.Windows.Forms.ListViewItem listViewItem78 = new System.Windows.Forms.ListViewItem("AES");
-            System.Windows.Forms.ListViewItem listViewItem79 = new System.Windows.Forms.ListViewItem("RC2");
-            System.Windows.Forms.ListViewItem listViewItem80 = new System.Windows.Forms.ListViewItem("BlowFish");
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("TripleDES");
+            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("AES");
+            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("RC2");
+            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("BlowFish");
             this.passBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tagBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.listView1 = new MaterialSkin.Controls.MaterialListView();
@@ -54,8 +54,8 @@
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -113,11 +113,11 @@
             this.listView1.FullRowSelect = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem76,
-            listViewItem77,
-            listViewItem78,
-            listViewItem79,
-            listViewItem80});
+            listViewItem26,
+            listViewItem27,
+            listViewItem28,
+            listViewItem29,
+            listViewItem30});
             this.listView1.Location = new System.Drawing.Point(3, 151);
             this.listView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.listView1.MouseState = MaterialSkin.MouseState.OUT;
@@ -306,20 +306,22 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "[或按下Ctrl+Alt+Enter模拟键入]";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.DoubleClick += new System.EventHandler(this.label5_DoubleClick);
             // 
             // materialFlatButton1
             // 
             this.materialFlatButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.materialFlatButton1.AutoSize = true;
             this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton1.Depth = 0;
             this.materialFlatButton1.Font = new System.Drawing.Font("宋体", 12F);
             this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(44, 6);
+            this.materialFlatButton1.Location = new System.Drawing.Point(36, 6);
             this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
             this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(27, 27);
+            this.materialFlatButton1.Size = new System.Drawing.Size(35, 27);
             this.materialFlatButton1.TabIndex = 6;
             this.materialFlatButton1.Text = "+";
             this.materialFlatButton1.UseVisualStyleBackColor = true;
@@ -327,6 +329,7 @@
             // materialFlatButton2
             // 
             this.materialFlatButton2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.materialFlatButton2.AutoSize = true;
             this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton2.Depth = 0;
             this.materialFlatButton2.Font = new System.Drawing.Font("宋体", 12F);
@@ -336,7 +339,7 @@
             this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton2.Name = "materialFlatButton2";
             this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(27, 27);
+            this.materialFlatButton2.Size = new System.Drawing.Size(29, 27);
             this.materialFlatButton2.TabIndex = 7;
             this.materialFlatButton2.Text = "-";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
@@ -353,13 +356,14 @@
             this.tableLayoutPanel4.Controls.Add(this.materialFlatButton2, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(15, 530);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(15, 529);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.71429F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.28571F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(376, 70);
             this.tableLayoutPanel4.TabIndex = 8;
+            this.tableLayoutPanel4.Visible = false;
             // 
             // label1
             // 
@@ -374,19 +378,8 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "12";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialDivider2
-            // 
-            this.materialDivider2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider2.Depth = 0;
-            this.materialDivider2.Location = new System.Drawing.Point(0, 512);
-            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(400, 1);
-            this.materialDivider2.TabIndex = 9;
-            this.materialDivider2.Text = "materialDivider2";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label1_MouseUp);
             // 
             // textBox1
             // 
@@ -400,6 +393,20 @@
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "yourpassword";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.UseSystemPasswordChar = true;
+            // 
+            // materialDivider2
+            // 
+            this.materialDivider2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider2.Depth = 0;
+            this.materialDivider2.Location = new System.Drawing.Point(0, 512);
+            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider2.Name = "materialDivider2";
+            this.materialDivider2.Size = new System.Drawing.Size(400, 1);
+            this.materialDivider2.TabIndex = 9;
+            this.materialDivider2.Text = "materialDivider2";
             // 
             // MeowBeta
             // 
