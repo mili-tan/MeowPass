@@ -29,26 +29,26 @@ namespace MeowPass
         {
             //listView1.Items[0].Text = "DES";
 
-            pictureBox3.Visible = false;
-            Bitmap b = new Bitmap(panel1.Width, panel1.Height);
-            panel1.DrawToBitmap(b, new Rectangle(0, 0, b.Width, b.Height));
-            pictureBox3.Visible = true;
-            panel1.BackgroundImage = b;
+            copyButton.Visible = false;
+            Bitmap b = new Bitmap(panelCopyButton.Width, panelCopyButton.Height);
+            panelCopyButton.DrawToBitmap(b, new Rectangle(0, 0, b.Width, b.Height));
+            copyButton.Visible = true;
+            panelCopyButton.BackgroundImage = b;
         }
 
         private void label5_DoubleClick(object sender, EventArgs e)
         {
-            tableLayoutPanel4.Visible = !tableLayoutPanel4.Visible;
+            panelPassGen.Visible = !panelPassGen.Visible;
         }
 
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
-            textBox1.UseSystemPasswordChar = false;
+            passBox.UseSystemPasswordChar = false;
         }
 
         private void label1_MouseUp(object sender, MouseEventArgs e)
         {
-            textBox1.UseSystemPasswordChar = true;
+            passBox.UseSystemPasswordChar = true;
         }
     }
 }
