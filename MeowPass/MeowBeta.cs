@@ -43,12 +43,12 @@ namespace MeowPass
 
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
-            passBox.UseSystemPasswordChar = false;
+            endPassBox.UseSystemPasswordChar = false;
         }
 
         private void label1_MouseUp(object sender, MouseEventArgs e)
         {
-            passBox.UseSystemPasswordChar = true;
+            endPassBox.UseSystemPasswordChar = true;
         }
     }
 }

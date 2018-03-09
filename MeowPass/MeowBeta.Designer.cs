@@ -37,6 +37,7 @@
             this.uPassBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tagBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.encryptList = new MaterialSkin.Controls.MaterialListView();
+            this.encryptColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelHashEncrypt = new System.Windows.Forms.TableLayoutPanel();
             this.CRCRButton = new MaterialSkin.Controls.MaterialRadioButton();
             this.MD5RButton = new MaterialSkin.Controls.MaterialRadioButton();
@@ -53,9 +54,8 @@
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.panelPassGen = new System.Windows.Forms.TableLayoutPanel();
             this.passCount = new System.Windows.Forms.Label();
-            this.passBox = new System.Windows.Forms.TextBox();
+            this.endPassBox = new System.Windows.Forms.TextBox();
             this.divider2 = new MaterialSkin.Controls.MaterialDivider();
-            this.encryptColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelHashEncrypt.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelPassInput.SuspendLayout();
@@ -129,6 +129,10 @@
             this.encryptList.TabIndex = 2;
             this.encryptList.UseCompatibleStateImageBehavior = false;
             this.encryptList.View = System.Windows.Forms.View.Details;
+            // 
+            // encryptColumnHeader
+            // 
+            this.encryptColumnHeader.Width = 430;
             // 
             // panelHashEncrypt
             // 
@@ -351,7 +355,7 @@
             this.panelPassGen.Controls.Add(this.materialFlatButton1, 0, 0);
             this.panelPassGen.Controls.Add(this.materialFlatButton2, 2, 0);
             this.panelPassGen.Controls.Add(this.passCount, 1, 1);
-            this.panelPassGen.Controls.Add(this.passBox, 1, 0);
+            this.panelPassGen.Controls.Add(this.endPassBox, 1, 0);
             this.panelPassGen.Location = new System.Drawing.Point(15, 529);
             this.panelPassGen.Name = "panelPassGen";
             this.panelPassGen.RowCount = 2;
@@ -377,19 +381,19 @@
             this.passCount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             this.passCount.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label1_MouseUp);
             // 
-            // passBox
+            // endPassBox
             // 
-            this.passBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F);
-            this.passBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.passBox.Location = new System.Drawing.Point(78, 6);
-            this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(219, 27);
-            this.passBox.TabIndex = 9;
-            this.passBox.Text = "yourpassword";
-            this.passBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.passBox.UseSystemPasswordChar = true;
+            this.endPassBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.endPassBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.endPassBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F);
+            this.endPassBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.endPassBox.Location = new System.Drawing.Point(78, 6);
+            this.endPassBox.Name = "endPassBox";
+            this.endPassBox.Size = new System.Drawing.Size(219, 27);
+            this.endPassBox.TabIndex = 9;
+            this.endPassBox.Text = "yourpassword";
+            this.endPassBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.endPassBox.UseSystemPasswordChar = true;
             // 
             // divider2
             // 
@@ -403,10 +407,6 @@
             this.divider2.Size = new System.Drawing.Size(400, 1);
             this.divider2.TabIndex = 9;
             this.divider2.Text = "materialDivider2";
-            // 
-            // encryptColumnHeader
-            // 
-            this.encryptColumnHeader.Width = 430;
             // 
             // MeowBeta
             // 
@@ -459,7 +459,7 @@
         private System.Windows.Forms.TableLayoutPanel panelPassGen;
         private System.Windows.Forms.Label passCount;
         private MaterialSkin.Controls.MaterialDivider divider2;
-        private System.Windows.Forms.TextBox passBox;
+        private System.Windows.Forms.TextBox endPassBox;
         private System.Windows.Forms.ColumnHeader encryptColumnHeader;
     }
 }
