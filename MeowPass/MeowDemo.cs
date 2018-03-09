@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WindowsInput;
 using System.Drawing;
 using System.Threading;
 using System.Diagnostics;
+using MeowPass.Tools;
 using static MeowPass.MeowTool;
 
 namespace MeowPass
 {
     public partial class MeowDemo : Form
     {
-        [DllImport("user32.dll", SetLastError = true)]
-        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, Keys vk);
-        [DllImport("user32.dll", SetLastError = true)]
-        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
-
         public MeowDemo()
         {
             InitializeComponent();
@@ -35,8 +30,8 @@ namespace MeowPass
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             notifyIcon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
             encryptBox.SelectedIndex = 0;
-            RegisterHotKey(Handle, 233, 3, Keys.Enter);
-            RegisterHotKey(Handle, 234, 3, Keys.M);
+            HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
+            HotKey.RegisterHotKey(Handle, 234, 3, Keys.M);
 
             if (checkBoxHidePass.Checked)
             {
@@ -84,8 +79,8 @@ namespace MeowPass
 
         private void MeowDemo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            UnregisterHotKey(Handle, 233);
-            UnregisterHotKey(Handle, 234);
+            HotKey.UnregisterHotKey(Handle, 233);
+            HotKey.UnregisterHotKey(Handle, 234);
             notifyIcon.Visible = false;
         }
 

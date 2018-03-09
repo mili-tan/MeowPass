@@ -79,6 +79,7 @@
     <Compile Include="MeowDemo.Designer.cs">
       <DependentUpon>MeowDemo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\HotKey.cs" />
     <Compile Include="Tools\MeowTool.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
