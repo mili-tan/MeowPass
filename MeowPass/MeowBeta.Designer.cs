@@ -55,7 +55,6 @@
             this.panelPassGen = new System.Windows.Forms.TableLayoutPanel();
             this.passCount = new System.Windows.Forms.Label();
             this.endPassBox = new System.Windows.Forms.TextBox();
-            this.divider2 = new MaterialSkin.Controls.MaterialDivider();
             this.panelHashEncrypt.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelPassInput.SuspendLayout();
@@ -70,8 +69,10 @@
             // 
             this.uPassBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.uPassBox.Depth = 0;
+            this.uPassBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uPassBox.Hint = " 记忆密码";
-            this.uPassBox.Location = new System.Drawing.Point(42, 49);
+            this.uPassBox.Location = new System.Drawing.Point(42, 48);
+            this.uPassBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uPassBox.MaxLength = 32767;
             this.uPassBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.uPassBox.Name = "uPassBox";
@@ -88,8 +89,10 @@
             // 
             this.tagBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tagBox.Depth = 0;
+            this.tagBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tagBox.Hint = " 记忆标签";
             this.tagBox.Location = new System.Drawing.Point(42, 6);
+            this.tagBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tagBox.MaxLength = 32767;
             this.tagBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.tagBox.Name = "tagBox";
@@ -104,11 +107,12 @@
             // 
             // encryptList
             // 
-            this.encryptList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.encryptList.AutoArrange = false;
             this.encryptList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.encryptList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.encryptColumnHeader});
             this.encryptList.Depth = 0;
+            this.encryptList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.encryptList.Font = new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(134)));
             this.encryptList.FullRowSelect = true;
             this.encryptList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
@@ -118,21 +122,25 @@
             listViewItem3,
             listViewItem4,
             listViewItem5});
-            this.encryptList.Location = new System.Drawing.Point(3, 151);
+            this.encryptList.Location = new System.Drawing.Point(3, 149);
+            this.encryptList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.encryptList.MaximumSize = new System.Drawing.Size(370, 280);
+            this.encryptList.MinimumSize = new System.Drawing.Size(370, 280);
             this.encryptList.MouseLocation = new System.Drawing.Point(-1, -1);
             this.encryptList.MouseState = MaterialSkin.MouseState.OUT;
             this.encryptList.MultiSelect = false;
             this.encryptList.Name = "encryptList";
             this.encryptList.OwnerDraw = true;
             this.encryptList.Scrollable = false;
-            this.encryptList.Size = new System.Drawing.Size(370, 281);
+            this.encryptList.ShowGroups = false;
+            this.encryptList.Size = new System.Drawing.Size(370, 280);
             this.encryptList.TabIndex = 2;
             this.encryptList.UseCompatibleStateImageBehavior = false;
             this.encryptList.View = System.Windows.Forms.View.Details;
             // 
             // encryptColumnHeader
             // 
-            this.encryptColumnHeader.Width = 430;
+            this.encryptColumnHeader.Width = 370;
             // 
             // panelHashEncrypt
             // 
@@ -145,11 +153,12 @@
             this.panelHashEncrypt.Controls.Add(this.CRCRButton, 2, 0);
             this.panelHashEncrypt.Controls.Add(this.MD5RButton, 0, 0);
             this.panelHashEncrypt.Controls.Add(this.SHARButton, 1, 0);
-            this.panelHashEncrypt.Location = new System.Drawing.Point(46, 102);
+            this.panelHashEncrypt.Location = new System.Drawing.Point(46, 100);
+            this.panelHashEncrypt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHashEncrypt.Name = "panelHashEncrypt";
             this.panelHashEncrypt.RowCount = 1;
             this.panelHashEncrypt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelHashEncrypt.Size = new System.Drawing.Size(327, 43);
+            this.panelHashEncrypt.Size = new System.Drawing.Size(327, 45);
             this.panelHashEncrypt.TabIndex = 8;
             // 
             // CRCRButton
@@ -158,7 +167,7 @@
             this.CRCRButton.AutoSize = true;
             this.CRCRButton.Depth = 0;
             this.CRCRButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
-            this.CRCRButton.Location = new System.Drawing.Point(218, 6);
+            this.CRCRButton.Location = new System.Drawing.Point(218, 7);
             this.CRCRButton.Margin = new System.Windows.Forms.Padding(0);
             this.CRCRButton.MouseLocation = new System.Drawing.Point(-1, -1);
             this.CRCRButton.MouseState = MaterialSkin.MouseState.HOVER;
@@ -176,7 +185,7 @@
             this.MD5RButton.Checked = true;
             this.MD5RButton.Depth = 0;
             this.MD5RButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
-            this.MD5RButton.Location = new System.Drawing.Point(0, 6);
+            this.MD5RButton.Location = new System.Drawing.Point(0, 7);
             this.MD5RButton.Margin = new System.Windows.Forms.Padding(0);
             this.MD5RButton.MouseLocation = new System.Drawing.Point(-1, -1);
             this.MD5RButton.MouseState = MaterialSkin.MouseState.HOVER;
@@ -194,7 +203,7 @@
             this.SHARButton.AutoSize = true;
             this.SHARButton.Depth = 0;
             this.SHARButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
-            this.SHARButton.Location = new System.Drawing.Point(109, 6);
+            this.SHARButton.Location = new System.Drawing.Point(109, 7);
             this.SHARButton.Margin = new System.Windows.Forms.Padding(0);
             this.SHARButton.MouseLocation = new System.Drawing.Point(-1, -1);
             this.SHARButton.MouseState = MaterialSkin.MouseState.HOVER;
@@ -207,21 +216,21 @@
             // 
             // panelMain
             // 
-            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.ColumnCount = 1;
             this.panelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.06728F));
             this.panelMain.Controls.Add(this.panelHashEncrypt, 0, 2);
             this.panelMain.Controls.Add(this.divider1, 0, 1);
             this.panelMain.Controls.Add(this.panelPassInput, 0, 0);
             this.panelMain.Controls.Add(this.encryptList, 0, 3);
-            this.panelMain.Location = new System.Drawing.Point(12, 71);
+            this.panelMain.Location = new System.Drawing.Point(12, 81);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMain.Name = "panelMain";
             this.panelMain.RowCount = 4;
             this.panelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.panelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.panelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 287F));
+            this.panelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 288F));
             this.panelMain.Size = new System.Drawing.Size(376, 435);
             this.panelMain.TabIndex = 0;
             // 
@@ -229,7 +238,8 @@
             // 
             this.divider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.divider1.Depth = 0;
-            this.divider1.Location = new System.Drawing.Point(3, 94);
+            this.divider1.Location = new System.Drawing.Point(3, 92);
+            this.divider1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.divider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.divider1.Name = "divider1";
             this.divider1.Size = new System.Drawing.Size(370, 1);
@@ -245,18 +255,20 @@
             this.panelPassInput.Controls.Add(this.tagBox, 1, 0);
             this.panelPassInput.Controls.Add(this.uPassBox, 1, 1);
             this.panelPassInput.Controls.Add(this.pictureBoxTag, 0, 0);
-            this.panelPassInput.Location = new System.Drawing.Point(3, 3);
+            this.panelPassInput.Location = new System.Drawing.Point(3, 2);
+            this.panelPassInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelPassInput.Name = "panelPassInput";
             this.panelPassInput.RowCount = 2;
             this.panelPassInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelPassInput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelPassInput.Size = new System.Drawing.Size(370, 85);
+            this.panelPassInput.Size = new System.Drawing.Size(370, 84);
             this.panelPassInput.TabIndex = 9;
             // 
             // pictureBoxKey
             // 
             this.pictureBoxKey.Image = global::MeowPass.Properties.Resources.key;
-            this.pictureBoxKey.Location = new System.Drawing.Point(3, 45);
+            this.pictureBoxKey.Location = new System.Drawing.Point(3, 44);
+            this.pictureBoxKey.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxKey.Name = "pictureBoxKey";
             this.pictureBoxKey.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxKey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -266,7 +278,8 @@
             // pictureBoxTag
             // 
             this.pictureBoxTag.Image = global::MeowPass.Properties.Resources.tag;
-            this.pictureBoxTag.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxTag.Location = new System.Drawing.Point(3, 2);
+            this.pictureBoxTag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxTag.Name = "pictureBoxTag";
             this.pictureBoxTag.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxTag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -277,7 +290,8 @@
             // 
             this.copyButton.BackColor = System.Drawing.Color.Transparent;
             this.copyButton.Image = global::MeowPass.Properties.Resources.copy;
-            this.copyButton.Location = new System.Drawing.Point(330, 1);
+            this.copyButton.Location = new System.Drawing.Point(331, 1);
+            this.copyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(55, 55);
             this.copyButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -291,6 +305,7 @@
             this.panelCopyButton.Controls.Add(this.labelTips);
             this.panelCopyButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelCopyButton.Location = new System.Drawing.Point(0, 605);
+            this.panelCopyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelCopyButton.Name = "panelCopyButton";
             this.panelCopyButton.Size = new System.Drawing.Size(400, 65);
             this.panelCopyButton.TabIndex = 5;
@@ -302,7 +317,7 @@
             this.labelTips.ForeColor = System.Drawing.Color.Silver;
             this.labelTips.Location = new System.Drawing.Point(0, 28);
             this.labelTips.Name = "labelTips";
-            this.labelTips.Size = new System.Drawing.Size(400, 37);
+            this.labelTips.Size = new System.Drawing.Size(400, 38);
             this.labelTips.TabIndex = 5;
             this.labelTips.Text = "[或按下Ctrl+Alt+Enter模拟键入]";
             this.labelTips.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,7 +371,8 @@
             this.panelPassGen.Controls.Add(this.materialFlatButton2, 2, 0);
             this.panelPassGen.Controls.Add(this.passCount, 1, 1);
             this.panelPassGen.Controls.Add(this.endPassBox, 1, 0);
-            this.panelPassGen.Location = new System.Drawing.Point(15, 529);
+            this.panelPassGen.Location = new System.Drawing.Point(12, 529);
+            this.panelPassGen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelPassGen.Name = "panelPassGen";
             this.panelPassGen.RowCount = 2;
             this.panelPassGen.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.71429F));
@@ -388,6 +404,7 @@
             this.endPassBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F);
             this.endPassBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.endPassBox.Location = new System.Drawing.Point(78, 6);
+            this.endPassBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endPassBox.Name = "endPassBox";
             this.endPassBox.Size = new System.Drawing.Size(219, 27);
             this.endPassBox.TabIndex = 9;
@@ -395,28 +412,15 @@
             this.endPassBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.endPassBox.UseSystemPasswordChar = true;
             // 
-            // divider2
-            // 
-            this.divider2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.divider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.divider2.Depth = 0;
-            this.divider2.Location = new System.Drawing.Point(0, 512);
-            this.divider2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.divider2.Name = "divider2";
-            this.divider2.Size = new System.Drawing.Size(400, 1);
-            this.divider2.TabIndex = 9;
-            this.divider2.Text = "materialDivider2";
-            // 
             // MeowBeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 670);
-            this.Controls.Add(this.divider2);
             this.Controls.Add(this.panelPassGen);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelCopyButton);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximumSize = new System.Drawing.Size(400, 670);
             this.MinimumSize = new System.Drawing.Size(400, 670);
             this.Name = "MeowBeta";
@@ -458,7 +462,6 @@
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
         private System.Windows.Forms.TableLayoutPanel panelPassGen;
         private System.Windows.Forms.Label passCount;
-        private MaterialSkin.Controls.MaterialDivider divider2;
         private System.Windows.Forms.TextBox endPassBox;
         private System.Windows.Forms.ColumnHeader encryptColumnHeader;
     }

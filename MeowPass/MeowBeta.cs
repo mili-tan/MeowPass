@@ -29,6 +29,8 @@ namespace MeowPass
         {
             //listView1.Items[0].Text = "DES";
 
+            encryptList.Scrollable = false;
+
             copyButton.Visible = false;
             Bitmap b = new Bitmap(panelCopyButton.Width, panelCopyButton.Height);
             panelCopyButton.DrawToBitmap(b, new Rectangle(0, 0, b.Width, b.Height));
