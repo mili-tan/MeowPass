@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MeowPass.Tools;
+using static MeowPass.MeowTool;
 
 namespace MeowPass
 {
@@ -38,19 +40,70 @@ namespace MeowPass
             panelCopyButton.BackgroundImage = b;
         }
 
-        private void label5_DoubleClick(object sender, EventArgs e)
+        private void Tips_DoubleClick(object sender, EventArgs e)
         {
             panelPassGen.Visible = !panelPassGen.Visible;
         }
 
-        private void label1_MouseDown(object sender, MouseEventArgs e)
+        private void PassCount_MouseDown(object sender, MouseEventArgs e)
         {
             endPassBox.UseSystemPasswordChar = false;
         }
 
-        private void label1_MouseUp(object sender, MouseEventArgs e)
+        private void PassCount_MouseUp(object sender, MouseEventArgs e)
         {
             endPassBox.UseSystemPasswordChar = true;
+        }
+
+        private string GenMeowPass(string pass, string tag, int passLength)
+        {
+            string uPassCrypto = "";
+            string uTagCrypto = MyMD5Crypto(tag);
+            if (SHARButton.Checked)
+            {
+                uPassCrypto = MyMD5Crypto(MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+            }
+            else if (MD5RButton.Checked)
+            {
+                uPassCrypto = MyMD5Crypto(MyMD5Crypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+            }
+            else if (CRCRButton.Checked)
+            {
+                uPassCrypto = MyMD5Crypto(MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+            }
+            switch (encryptList.SelectedIndices[0])
+            {
+                case 0:
+                    pass = MyDESCrypto(uTagCrypto, uPassCrypto);
+                    break;
+                case 1:
+                    pass = MyTripleDESCrypto(uTagCrypto, uPassCrypto);
+                    break;
+                case 2:
+                    pass = MyAESCrypto(uTagCrypto, uPassCrypto);
+                    break;
+                case 3:
+                    pass = MyRC2Crypto(uTagCrypto, uPassCrypto);
+                    break;
+                case 4:
+                    pass = MyBlowFishCrypto(uTagCrypto, uPassCrypto);
+                    break;
+                default:
+                    break;
+            }
+            if (pass.Length < passLength + 1)
+            {
+                while (!(pass.Length < passLength + 1))
+                {
+                    pass += pass;
+                }
+            }
+            return pass.Substring(0, passLength);
+        }
+
+        private void EncryptList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

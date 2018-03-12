@@ -137,6 +137,7 @@
             this.encryptList.TabIndex = 2;
             this.encryptList.UseCompatibleStateImageBehavior = false;
             this.encryptList.View = System.Windows.Forms.View.Details;
+            this.encryptList.SelectedIndexChanged += new System.EventHandler(this.EncryptList_SelectedIndexChanged);
             // 
             // encryptColumnHeader
             // 
@@ -321,7 +322,7 @@
             this.labelTips.TabIndex = 5;
             this.labelTips.Text = "[或按下Ctrl+Alt+Enter模拟键入]";
             this.labelTips.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTips.DoubleClick += new System.EventHandler(this.label5_DoubleClick);
+            this.labelTips.DoubleClick += new System.EventHandler(this.Tips_DoubleClick);
             // 
             // materialFlatButton1
             // 
@@ -394,8 +395,8 @@
             this.passCount.TabIndex = 8;
             this.passCount.Text = "12";
             this.passCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.passCount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
-            this.passCount.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label1_MouseUp);
+            this.passCount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PassCount_MouseDown);
+            this.passCount.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PassCount_MouseUp);
             // 
             // endPassBox
             // 
