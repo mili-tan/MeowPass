@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MeowPass.Tools;
 using static MeowPass.MeowTool;
+using System.Diagnostics;
 
 namespace MeowPass
 {
@@ -20,6 +21,13 @@ namespace MeowPass
         {
             InitializeComponent();
             MaximizeBox = false;
+
+            Process[] processes = Process.GetProcessesByName(Application.CompanyName);
+            if (processes.Length > 1)
+            {
+                MessageBox.Show("已有一个实例正在运行,请不要重复启动", "MeowPass", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Environment.Exit(1);
+            }
 
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -101,9 +109,35 @@ namespace MeowPass
             return pass.Substring(0, passLength);
         }
 
+        private void GenMeowPass()
+        {
+            endPassBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text, Convert.ToInt32(passCount));
+        }
+
         private void EncryptList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MeowBeta_Activated(object sender, EventArgs e)
+        {
+            Opacity = 1;
+        }
+
+        private void MeowBeta_Deactivate(object sender, EventArgs e)
+        {
+            try
+            {
+                Opacity = 0.5;
+            }
+            catch
+            {
+            }
+        }
+
+        private void CopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(endPassBox.Text);
         }
     }
 }

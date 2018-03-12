@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
             "DES"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World));
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("TripleDES");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("AES");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("RC2");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("BlowFish");
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("TripleDES");
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("AES");
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("RC2");
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("BlowFish");
             this.uPassBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tagBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.encryptList = new MaterialSkin.Controls.MaterialListView();
@@ -117,11 +117,11 @@
             this.encryptList.FullRowSelect = true;
             this.encryptList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.encryptList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24,
+            listViewItem25});
             this.encryptList.Location = new System.Drawing.Point(3, 149);
             this.encryptList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.encryptList.MaximumSize = new System.Drawing.Size(370, 280);
@@ -298,6 +298,7 @@
             this.copyButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.copyButton.TabIndex = 1;
             this.copyButton.TabStop = false;
+            this.copyButton.Click += new System.EventHandler(this.CopyButton_Click);
             // 
             // panelCopyButton
             // 
@@ -428,6 +429,9 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MeowBeta";
+            this.TopMost = true;
+            this.Activated += new System.EventHandler(this.MeowBeta_Activated);
+            this.Deactivate += new System.EventHandler(this.MeowBeta_Deactivate);
             this.Load += new System.EventHandler(this.MeowBeta_Load);
             this.panelHashEncrypt.ResumeLayout(false);
             this.panelHashEncrypt.PerformLayout();
