@@ -55,6 +55,7 @@ namespace MeowPass
 
         private void PassCount_MouseDown(object sender, MouseEventArgs e)
         {
+            GenMeowPass();
             endPassBox.UseSystemPasswordChar = false;
         }
 
@@ -79,25 +80,33 @@ namespace MeowPass
             {
                 uPassCrypto = MyMD5Crypto(MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
-            switch (encryptList.SelectedIndices[0])
+            if (encryptList.SelectedIndices.Count == 0)
             {
-                case 0:
-                    pass = MyDESCrypto(uTagCrypto, uPassCrypto);
-                    break;
-                case 1:
-                    pass = MyTripleDESCrypto(uTagCrypto, uPassCrypto);
-                    break;
-                case 2:
-                    pass = MyAESCrypto(uTagCrypto, uPassCrypto);
-                    break;
-                case 3:
-                    pass = MyRC2Crypto(uTagCrypto, uPassCrypto);
-                    break;
-                case 4:
-                    pass = MyBlowFishCrypto(uTagCrypto, uPassCrypto);
-                    break;
-                default:
-                    break;
+                pass = MyDESCrypto(uTagCrypto, uPassCrypto);
+            }
+            else
+            {
+                switch (encryptList.SelectedIndices[0])
+                {
+                    case 0:
+                        pass = MyDESCrypto(uTagCrypto, uPassCrypto);
+                        break;
+                    case 1:
+                        pass = MyTripleDESCrypto(uTagCrypto, uPassCrypto);
+                        break;
+                    case 2:
+                        pass = MyAESCrypto(uTagCrypto, uPassCrypto);
+                        break;
+                    case 3:
+                        pass = MyRC2Crypto(uTagCrypto, uPassCrypto);
+                        break;
+                    case 4:
+                        pass = MyBlowFishCrypto(uTagCrypto, uPassCrypto);
+                        break;
+                    default:
+                        pass = MyDESCrypto(uTagCrypto, uPassCrypto);
+                        break;
+                }
             }
             if (pass.Length < passLength + 1)
             {
@@ -111,7 +120,7 @@ namespace MeowPass
 
         private void GenMeowPass()
         {
-            endPassBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text, Convert.ToInt32(passCount));
+            endPassBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text, Convert.ToInt32(passCount.Text));
         }
 
         private void EncryptList_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,6 +146,7 @@ namespace MeowPass
 
         private void CopyButton_Click(object sender, EventArgs e)
         {
+            GenMeowPass();
             Clipboard.SetText(endPassBox.Text);
         }
     }
