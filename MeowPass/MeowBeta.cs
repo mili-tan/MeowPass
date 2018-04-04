@@ -1,15 +1,8 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MeowPass.Tools;
 using static MeowPass.MeowTool;
 using System.Diagnostics;
 
@@ -42,10 +35,10 @@ namespace MeowPass
             encryptList.Scrollable = false;
 
             copyButton.Visible = false;
-            Bitmap b = new Bitmap(panelCopyButton.Width, panelCopyButton.Height);
-            panelCopyButton.DrawToBitmap(b, new Rectangle(0, 0, b.Width, b.Height));
+            Bitmap bitmap = new Bitmap(panelCopyButton.Width, panelCopyButton.Height);
+            panelCopyButton.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
             copyButton.Visible = true;
-            panelCopyButton.BackgroundImage = b;
+            panelCopyButton.BackgroundImage = bitmap;
         }
 
         private void Tips_DoubleClick(object sender, EventArgs e)
@@ -123,10 +116,6 @@ namespace MeowPass
             endPassBox.Text = GenMeowPass(uPassBox.Text, tagBox.Text, Convert.ToInt32(passCount.Text));
         }
 
-        private void EncryptList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void MeowBeta_Activated(object sender, EventArgs e)
         {

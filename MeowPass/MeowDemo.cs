@@ -232,7 +232,7 @@ namespace MeowPass
             MinimizedForm();
         }
 
-        private void label5_DoubleClick(object sender, EventArgs e)
+        private void Label5_DoubleClick(object sender, EventArgs e)
         {
             new MeowBeta().Show();
         }

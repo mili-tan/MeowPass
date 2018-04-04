@@ -16,7 +16,7 @@ namespace MeowPass
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MeowBeta());
+            Application.Run(new MeowDemo());
         }
     }
 }

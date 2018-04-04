@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "DES"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World));
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("TripleDES");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("AES");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("RC2");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("BlowFish");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("TripleDES");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("AES");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("RC2");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("BlowFish");
             this.uPassBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tagBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.encryptList = new MaterialSkin.Controls.MaterialListView();
@@ -117,11 +117,11 @@
             this.encryptList.FullRowSelect = true;
             this.encryptList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.encryptList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12,
-            listViewItem13,
-            listViewItem14,
-            listViewItem15});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.encryptList.Location = new System.Drawing.Point(3, 149);
             this.encryptList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.encryptList.MaximumSize = new System.Drawing.Size(370, 280);
@@ -137,7 +137,6 @@
             this.encryptList.TabIndex = 2;
             this.encryptList.UseCompatibleStateImageBehavior = false;
             this.encryptList.View = System.Windows.Forms.View.Details;
-            this.encryptList.SelectedIndexChanged += new System.EventHandler(this.EncryptList_SelectedIndexChanged);
             // 
             // encryptColumnHeader
             // 
