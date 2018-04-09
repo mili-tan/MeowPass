@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "DES"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Empty, new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World));
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("TripleDES");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("AES");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("RC2");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("BlowFish");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("TripleDES");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("AES");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("RC2");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("BlowFish");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeowBeta));
             this.uPassBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.tagBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -126,11 +126,11 @@
             this.encryptList.FullRowSelect = true;
             this.encryptList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.encryptList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12,
-            listViewItem13,
-            listViewItem14,
-            listViewItem15});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.encryptList.Location = new System.Drawing.Point(3, 188);
             this.encryptList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.encryptList.MaximumSize = new System.Drawing.Size(371, 354);
@@ -440,12 +440,14 @@
             this.menuItemShow.Name = "menuItemShow";
             this.menuItemShow.Size = new System.Drawing.Size(123, 24);
             this.menuItemShow.Text = "最小化";
+            this.menuItemShow.Click += new System.EventHandler(this.MenuItemShow_Click);
             // 
             // menuItemAbout
             // 
             this.menuItemAbout.Name = "menuItemAbout";
             this.menuItemAbout.Size = new System.Drawing.Size(123, 24);
             this.menuItemAbout.Text = "关于";
+            this.menuItemAbout.Click += new System.EventHandler(this.MenuItemAbout_Click);
             // 
             // toolStripSeparator1
             // 
@@ -457,6 +459,7 @@
             this.menuItemExit.Name = "menuItemExit";
             this.menuItemExit.Size = new System.Drawing.Size(123, 24);
             this.menuItemExit.Text = "退出";
+            this.menuItemExit.Click += new System.EventHandler(this.MenuItemExit_Click);
             // 
             // notifyIcon
             // 

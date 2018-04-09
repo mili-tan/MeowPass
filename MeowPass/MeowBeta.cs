@@ -192,6 +192,8 @@ namespace MeowPass
             Thread.Sleep(200);
             Visible = false;
             ShowInTaskbar = false;
+
+            menuItemShow.Text = "还原";
         }
 
         public void NormalForm()
@@ -200,6 +202,8 @@ namespace MeowPass
             WindowState = FormWindowState.Normal;
             Activate();
             ShowInTaskbar = false;
+
+            menuItemShow.Text = "最小化";
         }
 
         private void MeowBeta_SizeChanged(object sender, EventArgs e)
@@ -209,5 +213,25 @@ namespace MeowPass
                 MinimizedForm();
             }
         }
+
+        private void MenuItemShow_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                NormalForm();
+            }
+            else
+            {
+                MinimizedForm();
+            }
+        }
+
+        private void MenuItemAbout_Click(object sender, EventArgs e)
+        {
+            new AboutForm().Show();
+            MinimizedForm();
+        }
+
+        private void MenuItemExit_Click(object sender, EventArgs e) => Close();
     }
 }
