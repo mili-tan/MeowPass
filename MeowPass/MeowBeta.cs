@@ -5,6 +5,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using static MeowPass.MeowTool;
 using System.Diagnostics;
+using WindowsInput;
+using MeowPass.Tools;
+using System.Threading;
 
 namespace MeowPass
 {
@@ -31,6 +34,9 @@ namespace MeowPass
         private void MeowBeta_Load(object sender, EventArgs e)
         {
             //listView1.Items[0].Text = "DES";
+            //ShowInTaskbar = false;
+            MaximizeBox = false;
+            Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
             encryptList.Scrollable = false;
 
@@ -39,6 +45,9 @@ namespace MeowPass
             panelCopyButton.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
             copyButton.Visible = true;
             panelCopyButton.BackgroundImage = bitmap;
+
+            HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
+            HotKey.RegisterHotKey(Handle, 234, 3, Keys.M);
         }
 
         private void Tips_DoubleClick(object sender, EventArgs e)
@@ -137,6 +146,68 @@ namespace MeowPass
         {
             GenMeowPass();
             Clipboard.SetText(endPassBox.Text);
+            MessageBox.Show("已经复制到剪贴板了！");
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x0312:
+                    if (m.WParam.ToString() == "233")
+                    {
+                        GenMeowPass();
+                        if (!string.IsNullOrEmpty(endPassBox.Text))
+                        {
+                            new InputSimulator().Keyboard.TextEntry(endPassBox.Text);
+                        }
+                    }
+                    if (m.WParam.ToString() == "234")
+                    {
+                        //menuItemShow.PerformClick();
+                    }
+                    break;
+            }
+            base.WndProc(ref m);
+        }
+
+        private void MeowBeta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            HotKey.UnregisterHotKey(Handle, 233);
+            HotKey.UnregisterHotKey(Handle, 234);
+        }
+
+        private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                NormalForm();
+            }
+        }
+
+        public void MinimizedForm()
+        {
+            WindowState = FormWindowState.Minimized;
+            
+            Thread.Sleep(200);
+            Visible = false;
+            ShowInTaskbar = false;
+        }
+
+        public void NormalForm()
+        {
+            Visible = true;
+            WindowState = FormWindowState.Normal;
+            Activate();
+            ShowInTaskbar = false;
+        }
+
+        private void MeowBeta_SizeChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                MinimizedForm();
+            }
         }
     }
 }

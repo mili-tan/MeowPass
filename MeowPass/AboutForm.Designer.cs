@@ -133,7 +133,7 @@
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
             this.tableLayoutPanel5.Controls.Add(this.linkThanks, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 30);
@@ -151,9 +151,9 @@
             this.linkThanks.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.linkThanks.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkThanks.LinkColor = System.Drawing.SystemColors.ActiveCaption;
-            this.linkThanks.Location = new System.Drawing.Point(278, 1);
+            this.linkThanks.Location = new System.Drawing.Point(301, 1);
             this.linkThanks.Name = "linkThanks";
-            this.linkThanks.Size = new System.Drawing.Size(148, 19);
+            this.linkThanks.Size = new System.Drawing.Size(125, 19);
             this.linkThanks.TabIndex = 6;
             this.linkThanks.TabStop = true;
             this.linkThanks.Text = "(鸣谢与开源许可)";
@@ -166,7 +166,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(269, 19);
+            this.label5.Size = new System.Drawing.Size(292, 19);
             this.label5.TabIndex = 5;
             this.label5.Text = "没有他们就不会有MeowPass的诞生.";
             // 
@@ -185,8 +185,8 @@
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.33566F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.66434F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.85548F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.14452F));
             this.tableLayoutPanel3.Controls.Add(this.linkMiliSite, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 57);
@@ -204,9 +204,9 @@
             this.linkMiliSite.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F);
             this.linkMiliSite.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkMiliSite.LinkColor = System.Drawing.SystemColors.ActiveCaption;
-            this.linkMiliSite.Location = new System.Drawing.Point(278, 1);
+            this.linkMiliSite.Location = new System.Drawing.Point(336, 1);
             this.linkMiliSite.Name = "linkMiliSite";
-            this.linkMiliSite.Size = new System.Drawing.Size(148, 19);
+            this.linkMiliSite.Size = new System.Drawing.Size(90, 19);
             this.linkMiliSite.TabIndex = 2;
             this.linkMiliSite.TabStop = true;
             this.linkMiliSite.Text = "(@mili-tan)";
@@ -219,9 +219,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 19);
+            this.label3.Size = new System.Drawing.Size(327, 19);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Copyright © 2016 - 2018 Milkey Tan\r\n";
+            this.label3.Text = "Copyright © 2017 - 2018 Milkey Tan (谭有轩)\r\n";
             // 
             // tableLayoutPanel4
             // 
@@ -267,8 +267,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MeowPass.Properties.Resources.MeowDemo;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 13);
+            this.pictureBox1.Image = global::MeowPass.Properties.Resources.meow;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

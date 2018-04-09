@@ -35,8 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>meow.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin">
@@ -119,6 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILMergeOrder.txt" />
+    <Content Include="meow.ico" />
+    <None Include="Resources\meow.png" />
     <None Include="Resources\copy.png" />
     <None Include="Resources\key.png" />
     <None Include="Resources\tag.png" />
