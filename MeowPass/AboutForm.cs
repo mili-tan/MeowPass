@@ -27,7 +27,7 @@ namespace MeowPass
 
         private void LinkMiliSite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://me.milione.cc");
+            Process.Start("https://github.com/ghost");
         }
 
         private void LinkLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

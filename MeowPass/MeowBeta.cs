@@ -53,6 +53,7 @@ namespace MeowPass
         private void Tips_DoubleClick(object sender, EventArgs e)
         {
             panelPassGen.Visible = !panelPassGen.Visible;
+            GenMeowPass();
         }
 
         private void PassCount_MouseDown(object sender, MouseEventArgs e)
@@ -233,5 +234,25 @@ namespace MeowPass
         }
 
         private void MenuItemExit_Click(object sender, EventArgs e) => Close();
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(passCount.Text) < 20)
+            {
+                passCount.Text = (Convert.ToInt32(passCount.Text) + 1).ToString();
+                GenMeowPass();
+            }
+
+        }
+
+        private void SubButton_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(passCount.Text) > 6)
+            {
+                passCount.Text = (Convert.ToInt32(passCount.Text) - 1).ToString();
+                GenMeowPass();
+            }
+
+        }
     }
 }

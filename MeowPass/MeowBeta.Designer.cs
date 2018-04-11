@@ -52,8 +52,8 @@
             this.panelCopyButton = new System.Windows.Forms.Panel();
             this.copyButton = new System.Windows.Forms.PictureBox();
             this.labelTips = new System.Windows.Forms.Label();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.addButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.subButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.panelPassGen = new System.Windows.Forms.TableLayoutPanel();
             this.passCount = new System.Windows.Forms.Label();
             this.endPassBox = new System.Windows.Forms.TextBox();
@@ -333,52 +333,54 @@
             this.labelTips.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelTips.DoubleClick += new System.EventHandler(this.Tips_DoubleClick);
             // 
-            // materialFlatButton1
+            // addButton
             // 
-            this.materialFlatButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Font = new System.Drawing.Font("宋体", 12F);
-            this.materialFlatButton1.Icon = null;
-            this.materialFlatButton1.Location = new System.Drawing.Point(35, 8);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(35, 33);
-            this.materialFlatButton1.TabIndex = 6;
-            this.materialFlatButton1.Text = "+";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.addButton.AutoSize = true;
+            this.addButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addButton.Depth = 0;
+            this.addButton.Font = new System.Drawing.Font("宋体", 12F);
+            this.addButton.Icon = null;
+            this.addButton.Location = new System.Drawing.Point(5, 8);
+            this.addButton.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.addButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addButton.Name = "addButton";
+            this.addButton.Primary = false;
+            this.addButton.Size = new System.Drawing.Size(46, 33);
+            this.addButton.TabIndex = 6;
+            this.addButton.Text = "+";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // materialFlatButton2
+            // subButton
             // 
-            this.materialFlatButton2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Font = new System.Drawing.Font("宋体", 12F);
-            this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(305, 8);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(29, 33);
-            this.materialFlatButton2.TabIndex = 7;
-            this.materialFlatButton2.Text = "-";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.subButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.subButton.AutoSize = true;
+            this.subButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.subButton.Depth = 0;
+            this.subButton.Font = new System.Drawing.Font("宋体", 12F);
+            this.subButton.Icon = null;
+            this.subButton.Location = new System.Drawing.Point(324, 8);
+            this.subButton.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.subButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.subButton.Name = "subButton";
+            this.subButton.Primary = false;
+            this.subButton.Size = new System.Drawing.Size(47, 33);
+            this.subButton.TabIndex = 7;
+            this.subButton.Text = "-";
+            this.subButton.UseVisualStyleBackColor = true;
+            this.subButton.Click += new System.EventHandler(this.SubButton_Click);
             // 
             // panelPassGen
             // 
             this.panelPassGen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPassGen.ColumnCount = 3;
-            this.panelPassGen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.panelPassGen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.panelPassGen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.panelPassGen.Controls.Add(this.materialFlatButton1, 0, 0);
-            this.panelPassGen.Controls.Add(this.materialFlatButton2, 2, 0);
+            this.panelPassGen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.panelPassGen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.panelPassGen.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.panelPassGen.Controls.Add(this.addButton, 0, 0);
+            this.panelPassGen.Controls.Add(this.subButton, 2, 0);
             this.panelPassGen.Controls.Add(this.passCount, 1, 1);
             this.panelPassGen.Controls.Add(this.endPassBox, 1, 0);
             this.panelPassGen.Location = new System.Drawing.Point(11, 603);
@@ -398,9 +400,9 @@
             this.passCount.AutoSize = true;
             this.passCount.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 7F);
             this.passCount.ForeColor = System.Drawing.Color.DimGray;
-            this.passCount.Location = new System.Drawing.Point(78, 49);
+            this.passCount.Location = new System.Drawing.Point(59, 49);
             this.passCount.Name = "passCount";
-            this.passCount.Size = new System.Drawing.Size(219, 17);
+            this.passCount.Size = new System.Drawing.Size(257, 17);
             this.passCount.TabIndex = 8;
             this.passCount.Text = "16";
             this.passCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -413,10 +415,10 @@
             this.endPassBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.endPassBox.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F);
             this.endPassBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.endPassBox.Location = new System.Drawing.Point(78, 11);
+            this.endPassBox.Location = new System.Drawing.Point(59, 11);
             this.endPassBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endPassBox.Name = "endPassBox";
-            this.endPassBox.Size = new System.Drawing.Size(219, 27);
+            this.endPassBox.Size = new System.Drawing.Size(257, 27);
             this.endPassBox.TabIndex = 9;
             this.endPassBox.Text = "yourpassword";
             this.endPassBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -484,7 +486,7 @@
             this.Name = "MeowBeta";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MeowBeta";
+            this.Text = "MeowPass";
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.MeowBeta_Activated);
             this.Deactivate += new System.EventHandler(this.MeowBeta_Deactivate);
@@ -522,8 +524,8 @@
         private System.Windows.Forms.PictureBox copyButton;
         private System.Windows.Forms.Panel panelCopyButton;
         private System.Windows.Forms.Label labelTips;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+        private MaterialSkin.Controls.MaterialFlatButton addButton;
+        private MaterialSkin.Controls.MaterialFlatButton subButton;
         private System.Windows.Forms.TableLayoutPanel panelPassGen;
         private System.Windows.Forms.Label passCount;
         private System.Windows.Forms.TextBox endPassBox;
