@@ -33,8 +33,6 @@ namespace MeowPass
 
         private void MeowBeta_Load(object sender, EventArgs e)
         {
-            //listView1.Items[0].Text = "DES";
-            //ShowInTaskbar = false;
             MaximizeBox = false;
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
@@ -47,7 +45,6 @@ namespace MeowPass
             panelCopyButton.BackgroundImage = bitmap;
 
             HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
-            HotKey.RegisterHotKey(Handle, 234, 3, Keys.M);
         }
 
         private void Tips_DoubleClick(object sender, EventArgs e)
@@ -163,10 +160,6 @@ namespace MeowPass
                             new InputSimulator().Keyboard.TextEntry(endPassBox.Text);
                         }
                     }
-                    if (m.WParam.ToString() == "234")
-                    {
-                        //menuItemShow.PerformClick();
-                    }
                     break;
             }
             base.WndProc(ref m);
@@ -175,7 +168,6 @@ namespace MeowPass
         private void MeowBeta_FormClosing(object sender, FormClosingEventArgs e)
         {
             HotKey.UnregisterHotKey(Handle, 233);
-            HotKey.UnregisterHotKey(Handle, 234);
         }
 
         private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -194,7 +186,7 @@ namespace MeowPass
             Visible = false;
             ShowInTaskbar = false;
 
-            menuItemShow.Text = "还原";
+            menuItemShow.Text = "显示";
         }
 
         public void NormalForm()
