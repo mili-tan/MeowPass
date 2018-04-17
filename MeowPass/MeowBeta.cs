@@ -18,21 +18,16 @@ namespace MeowPass
             InitializeComponent();
             MaximizeBox = false;
 
-            Process[] processes = Process.GetProcessesByName(Application.CompanyName);
-            if (processes.Length > 1)
-            {
-                MessageBox.Show("已有一个实例正在运行,请不要重复启动", "MeowPass", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Environment.Exit(1);
-            }
-
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Cyan500, Primary.Cyan600, Primary.Cyan600, Accent.Cyan700, TextShade.WHITE);
+
         }
 
         private void MeowBeta_Load(object sender, EventArgs e)
         {
+            Fx.EffectsWindows(Handle, 100, Fx.AW_BLEND);
             MaximizeBox = false;
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 
@@ -167,6 +162,7 @@ namespace MeowPass
 
         private void MeowBeta_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Fx.EffectsWindows(Handle, 100, Fx.AW_HIDE + Fx.AW_BLEND);
             HotKey.UnregisterHotKey(Handle, 233);
         }
 
