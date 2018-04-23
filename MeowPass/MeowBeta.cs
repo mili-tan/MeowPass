@@ -23,6 +23,7 @@ namespace MeowPass
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Cyan500, Primary.Cyan600, Primary.Cyan600, Accent.Cyan700, TextShade.WHITE);
 
+            HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
         }
 
         private void MeowBeta_Load(object sender, EventArgs e)
@@ -38,8 +39,6 @@ namespace MeowPass
             panelCopyButton.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
             copyButton.Visible = true;
             panelCopyButton.BackgroundImage = bitmap;
-
-            HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
         }
 
         private void Tips_DoubleClick(object sender, EventArgs e)
@@ -177,12 +176,14 @@ namespace MeowPass
         public void MinimizedForm()
         {
             WindowState = FormWindowState.Minimized;
-            
+
             Thread.Sleep(200);
             Visible = false;
             ShowInTaskbar = false;
 
             menuItemShow.Text = "显示";
+
+            HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
         }
 
         public void NormalForm()
@@ -193,6 +194,8 @@ namespace MeowPass
             ShowInTaskbar = false;
 
             menuItemShow.Text = "最小化";
+
+            HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
         }
 
         private void MeowBeta_SizeChanged(object sender, EventArgs e)
