@@ -6,11 +6,11 @@ using TaylorHornby.BlowFish;
 
 namespace MeowPass
 {
-    class MeowTool
+    static class MeowTool
     {
-        private static byte[] Iv = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
-        private static byte[] Iv16 = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF, 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
-        public static string MyMD5Crypto(string str)
+        private static readonly byte[] Iv = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
+        private static readonly byte[] Iv16 = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF, 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
+        public static string MyMd5Crypto(string str)
         {
             byte[] md5Byte = new MD5CryptoServiceProvider().ComputeHash(Encoding.Default.GetBytes(str.Trim()));
             return BitConverter.ToString(md5Byte).Replace("-", "");
@@ -37,10 +37,10 @@ namespace MeowPass
             }
             string encryptKey = encryptKeyall.Substring(0, 8);
             byte[] strs = Encoding.Unicode.GetBytes(str);
-            byte[] keys = Encoding.UTF8.GetBytes(encryptKey); ;
+            byte[] keys = Encoding.UTF8.GetBytes(encryptKey);
 
             DESCryptoServiceProvider desC = new DESCryptoServiceProvider();
-            MemoryStream mStream = new MemoryStream();
+            new MemoryStream();
 
             ICryptoTransform cryp = desC.CreateEncryptor(keys, Iv);
             return Convert.ToBase64String(cryp.TransformFinalBlock(strs, 0, strs.Length));
@@ -57,7 +57,7 @@ namespace MeowPass
             }
             string encryptKey = encryptKeyall.Substring(0, 16);
             byte[] strs = Encoding.Unicode.GetBytes(str);
-            byte[] keys = Encoding.ASCII.GetBytes(encryptKey); ;
+            byte[] keys = Encoding.ASCII.GetBytes(encryptKey);
 
             TripleDESCryptoServiceProvider tdesC = new TripleDESCryptoServiceProvider
             {
@@ -83,7 +83,7 @@ namespace MeowPass
             SymmetricAlgorithm aesC = Rijndael.Create();
             aesC.Key = Encoding.UTF8.GetBytes(encryptKey);
             aesC.IV = Iv16;
-            byte[] cipherBytes = null;
+            byte[] cipherBytes;
             using (MemoryStream mStream = new MemoryStream())
             {
                 using (CryptoStream cStream = new CryptoStream(mStream, aesC.CreateEncryptor(), CryptoStreamMode.Write))
@@ -109,7 +109,7 @@ namespace MeowPass
             }
             string encryptKey = encryptKeyall.Substring(0, 8);
             byte[] strs = Encoding.Unicode.GetBytes(str);
-            byte[] keys = Encoding.UTF8.GetBytes(encryptKey); ;
+            byte[] keys = Encoding.UTF8.GetBytes(encryptKey);
 
             RC2CryptoServiceProvider rc2C = new RC2CryptoServiceProvider
             {

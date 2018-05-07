@@ -4,7 +4,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using static MeowPass.MeowTool;
-using System.Diagnostics;
 using WindowsInput;
 using MeowPass.Tools;
 using System.Threading;
@@ -60,19 +59,20 @@ namespace MeowPass
 
         private string GenMeowPass(string pass, string tag, int passLength)
         {
+            if (pass == null) throw new ArgumentNullException(nameof(pass));
             string uPassCrypto = "";
-            string uTagCrypto = MyMD5Crypto(tag);
+            string uTagCrypto = MyMd5Crypto(tag);
             if (SHARButton.Checked)
             {
-                uPassCrypto = MyMD5Crypto(MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMd5Crypto(MySHACrypto(uPassBox.Text) + uPassBox.Text);
             }
             else if (MD5RButton.Checked)
             {
-                uPassCrypto = MyMD5Crypto(MyMD5Crypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMd5Crypto(MyMd5Crypto(uPassBox.Text) + uPassBox.Text);
             }
             else if (CRCRButton.Checked)
             {
-                uPassCrypto = MyMD5Crypto(MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMd5Crypto(MyCRSCrypto(uPassBox.Text) + uPassBox.Text);
             }
             if (encryptList.SelectedIndices.Count == 0)
             {
@@ -131,6 +131,7 @@ namespace MeowPass
             }
             catch
             {
+                // ignored
             }
         }
 
@@ -138,7 +139,7 @@ namespace MeowPass
         {
             GenMeowPass();
             Clipboard.SetText(endPassBox.Text);
-            MessageBox.Show("已经复制到剪贴板了！");
+            new Toast(@"已复制到剪贴板").Show();
         }
 
         protected override void WndProc(ref Message m)
@@ -152,6 +153,7 @@ namespace MeowPass
                         if (!string.IsNullOrEmpty(endPassBox.Text))
                         {
                             new InputSimulator().Keyboard.TextEntry(endPassBox.Text);
+                            new Toast(@"已模拟键入").Show();
                         }
                     }
                     break;
@@ -181,7 +183,7 @@ namespace MeowPass
             Visible = false;
             ShowInTaskbar = false;
 
-            menuItemShow.Text = "显示";
+            menuItemShow.Text = @"显示";
 
             HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
         }
@@ -193,7 +195,7 @@ namespace MeowPass
             Activate();
             ShowInTaskbar = false;
 
-            menuItemShow.Text = "最小化";
+            menuItemShow.Text = @"最小化";
 
             HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
         }
@@ -245,5 +247,6 @@ namespace MeowPass
             }
 
         }
+
     }
 }

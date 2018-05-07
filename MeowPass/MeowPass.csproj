@@ -70,6 +70,12 @@
     <Compile Include="MeowBeta.Designer.cs">
       <DependentUpon>MeowBeta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Toast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Toast.Designer.cs">
+      <DependentUpon>Toast.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\BlowFish.cs" />
     <Compile Include="Tools\CRC.cs" />
     <Compile Include="MeowDemo.cs">
@@ -102,6 +108,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Toast.resx">
+      <DependentUpon>Toast.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ILMerge.props" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
