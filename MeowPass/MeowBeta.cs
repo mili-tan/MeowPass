@@ -23,6 +23,8 @@ namespace MeowPass
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Cyan500, Primary.Cyan600, Primary.Cyan600, Accent.Cyan700, TextShade.WHITE);
 
             HotKey.RegisterHotKey(Handle, 233, 3, Keys.Enter);
+
+            MessageBox.Show(MyMd5Hash("this is a md5 test."));
         }
 
         private void MeowBeta_Load(object sender, EventArgs e)
@@ -61,18 +63,18 @@ namespace MeowPass
         {
             if (pass == null) throw new ArgumentNullException(nameof(pass));
             string uPassCrypto = "";
-            string uTagCrypto = MyMd5Crypto(tag);
+            string uTagCrypto = MyMd5Hash(tag);
             if (SHARButton.Checked)
             {
-                uPassCrypto = MyMd5Crypto(MySHACrypto(uPassBox.Text) + uPassBox.Text);
+                uPassCrypto = MyMd5Hash(MySHAHash(uPassBox.Text) + uPassBox.Text);
             }
             else if (MD5RButton.Checked)
             {
-                uPassCrypto = MyMd5Crypto(MyMd5Crypto(uPassBox.Text) + uPassBox.Text);
+                uPassCrypto = MyMd5Hash(MyMd5Hash(uPassBox.Text) + uPassBox.Text);
             }
             else if (CRCRButton.Checked)
             {
-                uPassCrypto = MyMd5Crypto(MyCRSCrypto(uPassBox.Text) + uPassBox.Text);
+                uPassCrypto = MyMd5Hash(MyCRSHash(uPassBox.Text) + uPassBox.Text);
             }
             if (encryptList.SelectedIndices.Count == 0)
             {

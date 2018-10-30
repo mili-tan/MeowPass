@@ -135,18 +135,18 @@ namespace MeowPass
         private string GenMeowPass(string pass,string tag,int passLength)
         {
             string uPassCrypto = "";
-            string uTagCrypto = MyMd5Crypto(tag);
+            string uTagCrypto = MyMd5Hash(tag);
             if (shaRButton.Checked)
             {
-                uPassCrypto = MyMd5Crypto(MySHACrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMd5Hash(MySHAHash(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
             else if (md5RButton.Checked)
             {
-                uPassCrypto = MyMd5Crypto(MyMd5Crypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMd5Hash(MyMd5Hash(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
             else if (crcRButton.Checked)
             {
-                uPassCrypto = MyMd5Crypto(MyCRSCrypto(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
+                uPassCrypto = MyMd5Hash(MyCRSHash(uPassBox.Text.ToString()) + uPassBox.Text.ToString());
             }
             switch (encryptBox.SelectedIndex)
             {

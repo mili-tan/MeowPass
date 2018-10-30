@@ -10,17 +10,17 @@ namespace MeowPass
     {
         private static readonly byte[] Iv = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
         private static readonly byte[] Iv16 = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF, 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
-        public static string MyMd5Crypto(string str)
+        public static string MyMd5Hash(string str)
         {
             byte[] md5Byte = new MD5CryptoServiceProvider().ComputeHash(Encoding.Default.GetBytes(str.Trim()));
             return BitConverter.ToString(md5Byte).Replace("-", "");
         }
-        public static string MySHACrypto(string str)
+        public static string MySHAHash(string str)
         {
             byte[] shaByte = new SHA1CryptoServiceProvider().ComputeHash(Encoding.Default.GetBytes(str.Trim()));
             return BitConverter.ToString(shaByte).Replace("-", "");
         }
-        public static string MyCRSCrypto(string str)
+        public static string MyCRSHash(string str)
         {
             byte[] shaByte = CRC.CRC16(Encoding.Default.GetBytes(str.Trim()));
             return BitConverter.ToString(shaByte).Replace("-", "");
