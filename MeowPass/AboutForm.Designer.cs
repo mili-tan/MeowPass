@@ -224,7 +224,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(345, 19);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Copyright © 2017 - 2018 Milkey Tan (谭有轩)\r\n";
+            this.label3.Text = "Copyright © 2017 - 2018 Milkey Tan\r\n";
             // 
             // tableLayoutPanel4
             // 
